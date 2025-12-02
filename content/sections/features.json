@@ -1,0 +1,30 @@
+{
+  "id": "features",
+  "title": "How Qblox Stands Out",
+  "features": [
+    {
+      "id": 1,
+      "title": "Supports STEM-Oriented Thinking",
+      "content": "As children grow, Qblox introduces real 3D reasoning: how shapes connect, how balance works, and how design choices affect the structure. It gives them early exposure to the type of thinking used in engineering.",
+      "img": "/lifestyle/child-play.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Helps Young Kids Practice Hand Skills",
+      "content": "The large cubes are simple to grab and connect. They encourage young children to use both hands together, improving coordination, precision, and confidence while building.",
+      "img": "/lifestyle/QbloxGrandma.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Encourages Collaborative Play",
+      "content": "Qblox allows several people to work on the same model from different sides. It fits naturally into classrooms, therapy environments, and family settings where building becomes a shared activity.",
+      "img": "/lifestyle/family-black.jpeg"
+    },
+    {
+      "id": 4,
+      "title": "Three-Direction Connection System",
+      "content": "Each cube connects in three perpendicular directions, enabling stable 3D structures that can extend outward and upward. This capability distinguishes Qblox from standard blocks or magnetic tiles.",
+      "img": "/lifestyle/kids-play.jpeg"
+    }
+  ]
+}
