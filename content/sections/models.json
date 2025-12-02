@@ -1,0 +1,34 @@
+{
+  "title": "Getting started with QBLOX",
+  "description": "Lets slowly unpack Qblox's endless possibilities with the most basic building blocks",
+  "models": [
+    {
+      "id": "The Qube",
+      "heading": "The Qube",
+      "description": "Begin your building journey with simple shapes that unlock big ideas",
+      "image": "product/blue-single.jpg",
+      "url": "https://shadcnblocks.com"
+    },
+    {
+      "id": "feature-2",
+      "heading": "The Spinning top",
+      "description": "Start with a single Qube and snap one onto each open side — suddenly you’ve engineered your very own spinning top!",
+      "image": "product/tripple.jpg",
+      "url": "https://shadcnblocks.com"
+    },
+    {
+      "id": "feature-3",
+      "heading": "The Tower",
+      "description": "You’ve mastered the spinning top — now stack another one right on top. Just like that, you’ve built your first Tower! how tall can it get?",
+      "image": "product/small-tower.jpg",
+      "url": "https://shadcnblocks.com"
+    },
+    {
+      "id": "feature-4",
+      "heading": "The Twins",
+      "description": "Stacking straight up is fun… but let’s go bigger.Take two Towers and connect them together — side-by-side.Look at that — you’ve just built The Twins",
+      "image": "product/twins-together.jpg",
+      "url": "https://shadcnblocks.com"
+    }
+  ]
+}

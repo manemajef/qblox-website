@@ -1,0 +1,370 @@
+{
+  "metadata": {
+    "title": "Qblox - Snap-Together Building Cubes for All Ages",
+    "description": "Discover Qblox: unique snap-together cubes that connect in three directions. Build spatial reasoning, creativity, and family connection through hands-on STEM play.",
+    "keywords": "qblox, building cubes, STEM toys, building blocks, educational toys, spatial reasoning, snap together"
+  },
+  "navigation": {
+    "logo": {
+      "src": "/imgs/qblox-logo.svg",
+      "alt": "Qblox logo"
+    },
+    "links": [
+      {
+        "label": "How It Works",
+        "href": "#how-it-works"
+      },
+      {
+        "label": "Benefits",
+        "href": "#benefits"
+      },
+      {
+        "label": "Sets",
+        "href": "#sets"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      }
+    ],
+    "cta": {
+      "label": "Get Qblox",
+      "href": "AMAZON_LINK",
+      "external": true
+    }
+  },
+  "sections": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "layout": "two-column",
+      "content": {
+        "heading": "Building Beyond Blocks",
+        "subheading": "Snap-together cubes that connect in every direction. Discover spatial reasoning, creativity, and the joy of building together.",
+        "ctas": [
+          {
+            "label": "Get Qblox on Amazon",
+            "href": "AMAZON_LINK",
+            "variant": "primary",
+            "external": true
+          },
+          {
+            "label": "Watch Video",
+            "href": "#video",
+            "variant": "secondary"
+          }
+        ]
+      },
+      "media": {
+        "type": "video",
+        "platform": "youtube",
+        "videoId": "t_Us_D8lJIU",
+        "url": "https://www.youtube.com/watch?v=t_Us_D8lJIU",
+        "embedUrl": "https://www.youtube.com/embed/t_Us_D8lJIU",
+        "thumbnail": "/imgs/hero-video-thumbnail.jpg",
+        "title": "Welcome to the World of Qblox",
+        "aspect": "video"
+      }
+    },
+    {
+      "id": "what-is-qblox",
+      "type": "content-with-image",
+      "layout": "two-column",
+      "imagePosition": "left",
+      "content": {
+        "heading": "What is Qblox?",
+        "paragraphs": [
+          "Qblox is a construction toy made of 4cm snap-together cubes in nine vibrant colors. Each cube connects horizontally, vertically, and diagonally through symmetrical channels, creating structural possibilities that traditional building toys can't match.",
+          "What makes Qblox unique is this three-directional building system. You can create gravity-defying towers, interwoven patterns, and complex engineering challenges that teach spatial reasoning and balance through hands-on discovery.",
+          "Designed for ages 3 and up, Qblox grows with every hand that builds. A preschooler learns to stack. An elementary student engineers structures. A teenager creates architectural art. A grandparent discovers patterns alongside grandchildren. It's play that connects generations."
+        ]
+      },
+      "media": {
+        "type": "image",
+        "src": "/imgs/product-cubes-closeup.jpg",
+        "alt": "Colorful Qblox cubes connected in multiple directions",
+        "aspect": "square"
+      }
+    },
+    {
+      "id": "how-it-works",
+      "type": "feature-grid",
+      "layout": "three-column",
+      "content": {
+        "heading": "Connect in Every Direction",
+        "subheading": "Three connection directions unlock endless creativity",
+        "items": [
+          {
+            "title": "Horizontal",
+            "description": "Side-by-side connections create foundations and patterns",
+            "media": {
+              "type": "image",
+              "src": "/imgs/connection-horizontal.jpg",
+              "alt": "Horizontal connection between Qblox cubes"
+            }
+          },
+          {
+            "title": "Vertical",
+            "description": "Stack upward to build towers and structures",
+            "media": {
+              "type": "image",
+              "src": "/imgs/connection-vertical.jpg",
+              "alt": "Vertical connection between Qblox cubes"
+            }
+          },
+          {
+            "title": "Diagonal",
+            "description": "Unique angled connections for gravity-defying designs",
+            "media": {
+              "type": "image",
+              "src": "/imgs/connection-diagonal.jpg",
+              "alt": "Diagonal connection between Qblox cubes"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "benefits",
+      "type": "icon-grid",
+      "layout": "four-column",
+      "content": {
+        "heading": "Why Qblox Works",
+        "subheading": "Real learning through hands-on play",
+        "items": [
+          {
+            "icon": "Brain",
+            "iconColor": "primary",
+            "title": "Spatial Reasoning",
+            "description": "Develops 3D thinking and engineering logic through multi-directional building"
+          },
+          {
+            "icon": "Lightbulb",
+            "iconColor": "accent",
+            "title": "Problem Solving",
+            "description": "Encourages experimentation, testing ideas, and creative solutions"
+          },
+          {
+            "icon": "Hand",
+            "iconColor": "primary",
+            "title": "Fine Motor Skills",
+            "description": "Strengthens hand-eye coordination and dexterity with every connection"
+          },
+          {
+            "icon": "Users",
+            "iconColor": "accent",
+            "title": "Family Connection",
+            "description": "Reduces screen time and brings generations together through shared creation"
+          }
+        ]
+      }
+    },
+    {
+      "id": "for-everyone",
+      "type": "age-grid",
+      "layout": "three-column",
+      "content": {
+        "heading": "For Every Age, Every Curiosity",
+        "subheading": "Qblox grows with you",
+        "items": [
+          {
+            "ageRange": "Ages 3-5",
+            "title": "First Builders",
+            "description": "Simple stacking, color recognition, and balance discovery. Safe jumbo cubes perfect for small hands learning cause and effect.",
+            "media": {
+              "type": "image",
+              "src": "/imgs/age-3-5-preschool.jpg",
+              "alt": "Young child discovering Qblox cubes",
+              "aspect": "3/2"
+            }
+          },
+          {
+            "ageRange": "Ages 6-12",
+            "title": "Young Engineers",
+            "description": "Complex structures, engineering challenges, and collaborative problem-solving. Building confidence through experimentation.",
+            "media": {
+              "type": "image",
+              "src": "/imgs/age-6-12-elementary.jpg",
+              "alt": "Elementary age children building with Qblox",
+              "aspect": "3/2"
+            }
+          },
+          {
+            "ageRange": "Teens & Adults",
+            "title": "Creative Expression",
+            "description": "Architectural art, stress relief, and display-worthy geometric designs. From solo meditation to family collaboration.",
+            "media": {
+              "type": "image",
+              "src": "/imgs/age-teens-adult.jpg",
+              "alt": "Adult creating architectural design with Qblox",
+              "aspect": "3/2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "sets",
+      "type": "product-cards",
+      "layout": "two-column",
+      "content": {
+        "heading": "Choose Your Set",
+        "subheading": "Both sets include nine vibrant colors and endless possibilities",
+        "products": [
+          {
+            "id": "qblox-18",
+            "name": "QBLOX-18",
+            "tagline": "Start Exploring",
+            "description": "18 cubes in 9 colors. Perfect for solo play, small groups, or discovering what Qblox can do. Build your first towers, explore balance, and see where curiosity leads.",
+            "features": [
+              "18 snap-together cubes",
+              "2 cubes per color",
+              "Instruction guide included",
+              "Great for beginners"
+            ],
+            "cta": {
+              "label": "Get QBLOX-18",
+              "href": "AMAZON_QBLOX18_LINK",
+              "external": true
+            },
+            "media": {
+              "type": "image",
+              "src": "/imgs/product-qblox-18.jpg",
+              "alt": "QBLOX-18 set with 18 snap-together cubes",
+              "aspect": "square"
+            }
+          },
+          {
+            "id": "qblox-27",
+            "name": "QBLOX-27",
+            "tagline": "Uncover Full Potential",
+            "description": "27 cubes with 3 of each color. More pieces unlock taller structures, intricate patterns, and the complete range of what Qblox can create. Ideal for families and classrooms.",
+            "features": [
+              "27 snap-together cubes",
+              "3 cubes per color",
+              "Instruction guide included",
+              "Advanced building potential"
+            ],
+            "cta": {
+              "label": "Get QBLOX-27",
+              "href": "AMAZON_QBLOX27_LINK",
+              "external": true
+            },
+            "media": {
+              "type": "image",
+              "src": "/imgs/product-qblox-27.png",
+              "alt": "QBLOX-27 set with 27 snap-together cubes",
+              "aspect": "square"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "rebuild-feature",
+      "type": "callout-banner",
+      "layout": "two-column",
+      "backgroundStyle": "gradient",
+      "content": {
+        "heading": "Built to Build. Built to Rebuild.",
+        "paragraphs": [
+          "Each Qblox cube is made from three identical parts that snap together with precision. If a cube comes apart—from a drop or during play—it's easy to reassemble.",
+          "This isn't a flaw; it's a feature that teaches micro-engineering and how structures work from the inside out. No glue, no frustration, just discovery."
+        ],
+        "cta": {
+          "label": "Watch Rebuild Tutorial",
+          "href": "REBUILD_VIDEO_LINK",
+          "variant": "secondary"
+        }
+      },
+      "media": {
+        "type": "image",
+        "src": "/imgs/rebuild-feature.jpg",
+        "alt": "Qblox cube showing three-part snap-together construction",
+        "aspect": "5/3"
+      }
+    },
+    {
+      "id": "faq",
+      "type": "accordion",
+      "layout": "two-column",
+      "content": {
+        "heading": "Questions? We've Got Answers.",
+        "subheading": "Everything you need to know about Qblox",
+        "items": [
+          {
+            "question": "What age is Qblox designed for?",
+            "answer": "Qblox is safe for children as young as 3, thanks to jumbo 4cm cubes with no small parts. But it engages all ages—from preschoolers learning to balance cubes, to teens and adults exploring complex patterns. It's truly multi-generational play."
+          },
+          {
+            "question": "How do the cubes connect?",
+            "answer": "Each cube has symmetrical channels that allow them to snap together horizontally, vertically, and diagonally. The connections are strong enough to hold structures together during play, yet gentle enough for small fingers to connect and disconnect easily."
+          },
+          {
+            "question": "What if a cube comes apart?",
+            "answer": "Each cube is made from three identical parts that snap together. If one comes apart—from a drop or rough play—it's easy to reassemble. This teaches children how structures are built from the inside out and introduces basic micro-engineering concepts. We provide a rebuild tutorial video for guidance."
+          },
+          {
+            "question": "How do I clean Qblox cubes?",
+            "answer": "Simply wipe with a damp cloth and mild soap if needed. The durable plastic is easy to maintain and designed for years of play."
+          },
+          {
+            "question": "Can Qblox be used in classrooms?",
+            "answer": "Absolutely. Qblox is a hands-on STEM learning tool that supports spatial reasoning lessons, engineering challenges, collaborative problem-solving, and Montessori-style open-ended exploration. Many educators use it for both structured activities and free-build time."
+          },
+          {
+            "question": "What's included in each set?",
+            "answer": "QBLOX-18 includes 18 cubes (2 of each color in 9 vibrant colors) plus an instruction guide. QBLOX-27 includes 27 cubes (3 of each color) plus an instruction guide. Both sets come with links to online video tutorials and building inspiration."
+          },
+          {
+            "question": "Where can I buy Qblox?",
+            "answer": "Qblox is available on Amazon with fast shipping. Use the 'Get Qblox' buttons on this page to view both set options and current availability."
+          },
+          {
+            "question": "Is Qblox safe?",
+            "answer": "Yes. Qblox meets international safety standards including ASTM certification. The jumbo 4cm cube size eliminates choking hazards, and all materials are non-toxic and durable. Designed with safety as a priority from day one."
+          }
+        ]
+      },
+      "media": {
+        "type": "image",
+        "src": "/imgs/faq-lifestyle.jpg",
+        "alt": "Family enjoying Qblox together",
+        "aspect": "square"
+      }
+    },
+    {
+      "id": "footer",
+      "type": "footer-cta",
+      "backgroundStyle": "gradient",
+      "content": {
+        "heading": "Start Building Today",
+        "subheading": "Join families discovering the joy of three-dimensional creation. From simple stacking to complex engineering, Qblox grows with every hand that builds.",
+        "cta": {
+          "label": "Get Qblox on Amazon",
+          "href": "AMAZON_LINK",
+          "variant": "primary",
+          "external": true
+        },
+        "links": [
+          {
+            "label": "Amazon Store",
+            "href": "AMAZON_LINK",
+            "external": true
+          },
+          {
+            "label": "Rebuild Instructions",
+            "href": "REBUILD_VIDEO_LINK",
+            "external": true
+          },
+          {
+            "label": "Contact Support",
+            "href": "mailto:support@qblox.com"
+          }
+        ],
+        "copyright": "© 2025 Qblox. All rights reserved.",
+        "tagline": "Building a better tomorrow, one cube at a time."
+      }
+    }
+  ]
+}

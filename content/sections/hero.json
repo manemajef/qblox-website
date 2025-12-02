@@ -1,0 +1,24 @@
+{
+  "id": "hero",
+  "title": "Where colorfull Cubes meets 3-Dimentional Art",
+  "content": [
+    "The groundbreaking inter-locking cubes that redefine how we build.",
+    "Explore symmetry, engineer 3D structures, and strengthen problem-solving skills — all through hands-on play."
+  ],
+  "media": {
+    "video": {
+      "id": "video",
+      "desc": "a link to youtube",
+      "type": "url",
+      "aspect-ratio": "video",
+      "link": "https://www.youtube.com/watch?v=t_Us_D8lJIU"
+    },
+    "image1": {
+      "id": "product-pic",
+      "desc": "a picture of qblox",
+      "type": "file",
+      "link": "/product/large-pac-set.jpg",
+      "aspect": "square"
+    }
+  }
+}
