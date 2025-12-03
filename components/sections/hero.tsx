@@ -19,15 +19,16 @@ export default function Hero() {
             </h1>*/}
 
             <Qblox className="text-8xl font-bold leading-tighter" />
-            <Lead className="tracking-tighter text-sky-800 leading-tighter font-medium text-xl">
+            <Lead className="tracking-tighter text-sky-800 leading-tighter font-medium text-2xl">
               {hero.title}
             </Lead>
             <div className="mt-4 mb-8">
-              {hero.content.map((c, i) => (
-                <p className="text-muted-foreground" key={i}>
+              <p className="text-muted-foreground text-lg">{hero.content}</p>
+              {/*{hero.content.map((c, i) => (
+                <p className="text-muted-foreground text-lg" key={i}>
                   {c}
                 </p>
-              ))}
+              ))}*/}
             </div>
 
             {/*<p className="text-muted-foreground mb-8 mac-w-xl lg:text-lg mt-8">

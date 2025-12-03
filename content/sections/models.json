@@ -29,6 +29,20 @@
       "description": "Stacking straight up is fun… but let’s go bigger.Take two Towers and connect them together — side-by-side.Look at that — you’ve just built The Twins",
       "image": "product/twins-together.jpg",
       "url": "https://shadcnblocks.com"
+    },
+    {
+      "id": "feature-5",
+      "heading": "The Circle",
+      "description": "Stacking straight up is fun… but let’s go bigger.Take two Towers and connect them together — side-by-side.Look at that — you’ve just built The Twins",
+      "image": "product/circle.jpg",
+      "url": "https://shadcnblocks.com"
+    },
+    {
+      "id": "feature-6",
+      "heading": "The The Color Wheel",
+      "description": "Stacking straight up is fun… but let’s go bigger.Take two Towers and connect them together — side-by-side.Look at that — you’ve just built The Twins",
+      "image": "product/large-set.jpg",
+      "url": "https://shadcnblocks.com"
     }
   ],
   "repair": {

@@ -6,9 +6,12 @@ export default function Intro() {
       <div className="container mx-auto">
         <h1 className="text-center text-4xl font-semibold"> {intro.title}</h1>
         <div className="grid md:grid-cols-2 gap-4">
-          <div className="mx-auto mt-6 flex flex-col justify-center bg-sky-100 p-4 px-6 rounded-4xl">
+          <div className="mx-auto mt-6 flex flex-col justify-center p-4 px-6 rounded-4xl">
             {intro.content.map((c, i) => (
-              <p className="text-xl mt-6 text-foreground/85" key={i}>
+              <p
+                className="text-xl mt-6 text-foreground/85 bg-sky-100 p-6 rounded-4xl"
+                key={i}
+              >
                 {c}
               </p>
             ))}
