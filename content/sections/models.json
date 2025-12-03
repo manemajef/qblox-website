@@ -30,5 +30,9 @@
       "image": "product/twins-together.jpg",
       "url": "https://shadcnblocks.com"
     }
-  ]
+  ],
+  "repair": {
+    "title": "Cubes May Separate, But They Don’t Break",
+    "content": "To ensure safety and long-term reuse, every cube is built from three strong parts that can detach under impact instead of cracking. Just reconnect the pieces and continue building. A quick rebuild guide is available whenever help is needed."
+  }
 }

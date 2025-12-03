@@ -1,0 +1,32 @@
+{
+  "title": "Start Building",
+  "subtitle": "Choose Your set",
+  "sets": [
+    {
+      "id": "qblox-18",
+      "title": "QBLOX-18: Start Exploring",
+      "description": "18 cubes in 9 colors. Perfect for solo play, small groups, or discovering what Qblox can do. Build your first towers, explore balance, and see where curiosity leads.",
+      "features": [
+        "18 snap-together cubes",
+        "2 cubes per color",
+        "great for begginers"
+      ],
+      "img": "/product/medium-pac-set.jpg",
+      "img2": "/product/medium-pac.jpg",
+      "button": "Get QBLOX-18"
+    },
+    {
+      "id": "qblox-27",
+      "title": "QBLOX-27: Uncover Full Potential",
+      "description": "27 cubes with 3 of each color. More pieces unlock taller structures, intricate patterns, and the complete range of what Qblox can create. Ideal for families and classrooms.",
+      "features": [
+        "27 snap-together cubes",
+        "3 cubes per color",
+        "Advanced building potential"
+      ],
+      "img": "/product/large-pac-set.jpg",
+      "img2": "/product/large-pac.jpg",
+      "button": "Get QBLOX-27"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 import features from "@/content/sections/features.json";
 import Image from "next/image";
-import { H1, Large, P } from "../ui/typography";
+import { Large } from "../ui/typography";
 
 interface FeatureType {
   title: string;
@@ -45,12 +45,46 @@ const Feature2 = ({ title, img, content, left = true }: FeatureType) => {
   );
 };
 
+const FeatureInteractive = ({
+  title,
+  img,
+  content,
+  left = true,
+}: FeatureType) => {
+  const imageOrder = left ? "sm:order-1" : "sm:order-2";
+  const textOrder = left ? "sm:order-2" : "sm:order-1";
+
+  return (
+    <div className="border rounded-xl overflow-hidden max-w-md pb-4 mx-auto  sm:pb-0 sm:max-w-none sm:mx-0 sm:grid sm:grid-cols-2 md:grid-cols-5 sm:gap-8 mt-12">
+      <div
+        className={`aspect-square relative w-full ${imageOrder} md:col-span-2`}
+      >
+        <Image src={img} fill alt="" className="object-cover" />
+      </div>
+      <div className={`mt-4 sm:mt-0 p-4 ${textOrder} md:col-span-3`}>
+        <Large className="text-2xl">{title}</Large>
+        <p className="mt-4 text-lg text-foreground/85">{content}</p>
+      </div>
+    </div>
+  );
+};
+
 export default function Features() {
   return (
     <section className="py-24" id={features.id}>
       <div className="container mx-auto">
         <h1 className="text-4xl font-semibold text-center">{features.title}</h1>
-        <div className="">
+        {features.features.map((f: FeatureType, i) => (
+          <FeatureInteractive
+            title={f.title}
+            img={f.img}
+            content={f.content}
+            key={i}
+            left={(i + 1) % 2 == 0}
+          />
+        ))}
+
+        <div className="hidden">
           <div className="hidden sm:block">
             {features.features.map((f: FeatureType, i) => (
               <Feature2

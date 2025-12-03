@@ -1,0 +1,16 @@
+{
+  "id": "footer",
+  "title": "Start Building Today",
+  "description": "Join families discovering the joy of three-dimensional creation. From simple stacking to complex engineering, Qblox grows with every hand that builds.",
+  "button": {
+    "label": "Get Qblox on Amazon",
+    "url": "https://amazon.com"
+  },
+  "links": [
+    { "label": "Amazon Store", "url": "https://amazon.com" },
+    { "label": "Rebuild Instructions", "url": "https://amazon.com/rebuild" },
+    { "label": "Contact Support", "url": "mailto:support@qblox.com" }
+  ],
+  "copyright": "© 2025 Qblox. All rights reserved.",
+  "tagline": "Building a better tomorrow, one cube at a time."
+}
