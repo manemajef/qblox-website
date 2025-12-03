@@ -1,5 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  NavigationMenuViewport,
+} from "@/components/ui/navigation-menu";
+import { Menu } from "lucide-react";
 
 import { Button } from "../ui/button";
 
@@ -45,13 +56,31 @@ export default function Navbar() {
         </nav>
 
         <div className="ml-auto flex items-center gap-3">
-          <Button asChild variant="outline">
-            <Link href="#pricing">Get Qblox</Link>
-          </Button>
+          <NavigationMenu className="">
+            <Button asChild variant="outline" size="sm">
+              <Link href="#pricing">Get Qblox</Link>
+            </Button>
+            <NavigationMenuList className="md:hidden">
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>
+                  <Menu />
+                </NavigationMenuTrigger>
+                <NavigationMenuContent className="">
+                  {links.map((link, i) => (
+                    <NavigationMenuLink key={i}>
+                      <Link href={link.href} className="">
+                        {link.label}
+                      </Link>
+                    </NavigationMenuLink>
+                  ))}
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
         </div>
       </div>
 
-      <div className="md:hidden border-t bg-background/90">
+      {/*<div className="md:hidden border-t bg-background/90">
         <div className="container mx-auto flex gap-4 overflow-x-auto px-4 py-3 text-sm font-medium text-foreground/80">
           {links.map((link) => (
             <Link
@@ -63,7 +92,7 @@ export default function Navbar() {
             </Link>
           ))}
         </div>
-      </div>
+      </div>*/}
     </header>
   );
 }

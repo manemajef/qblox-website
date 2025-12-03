@@ -6,14 +6,14 @@ export default function Intro() {
       <div className="container mx-auto">
         <h1 className="text-center text-4xl font-semibold"> {intro.title}</h1>
         <div className="grid md:grid-cols-2 gap-4">
-          <div className="max-w-lg mx-auto mt-6 flex flex-col justify-center">
+          <div className="mx-auto mt-6 flex flex-col justify-center bg-sky-100 p-4 px-6 rounded-4xl">
             {intro.content.map((c, i) => (
               <p className="text-xl mt-6 text-foreground/85" key={i}>
                 {c}
               </p>
             ))}
           </div>
-          <div className="relative w-full aspect-square">
+          <div className="relative w-full aspect-square ">
             <Image
               src="/product/large-pac-set.jpg"
               fill

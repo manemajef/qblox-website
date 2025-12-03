@@ -21,8 +21,12 @@ export default function FAQ() {
         >
           {faq.items.map((item, i) => (
             <AccordionItem value={`${i + 1}`} key={i}>
-              <AccordionTrigger>{item.question}</AccordionTrigger>
-              <AccordionContent>{item.answer}</AccordionContent>
+              <AccordionTrigger className="text-xl font-semibold">
+                {item.question}
+              </AccordionTrigger>
+              <AccordionContent className="text-lg text-foreground/85">
+                {item.answer}
+              </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>

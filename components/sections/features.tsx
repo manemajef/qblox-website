@@ -55,7 +55,7 @@ const FeatureInteractive = ({
   const textOrder = left ? "sm:order-2" : "sm:order-1";
 
   return (
-    <div className="border rounded-xl overflow-hidden max-w-md pb-4 mx-auto  sm:pb-0 sm:max-w-none sm:mx-0 sm:grid sm:grid-cols-2 md:grid-cols-5 sm:gap-8 mt-12">
+    <div className="border rounded-xl overflow-hidden max-w-md pb-4 mx-auto  sm:pb-0 sm:max-w-4xl  sm:grid sm:grid-cols-2 md:grid-cols-5 sm:gap-8 mt-12">
       <div
         className={`aspect-square relative w-full ${imageOrder} md:col-span-2`}
       >
