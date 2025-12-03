@@ -1,15 +1,5 @@
 # Qblox
-<nav style = "display:flex; gap:1em; justify-content:space-between; padding: .5em;">
-  <div>
-    <img src = "public/logo.png" style = "width:2em; height:2em;"> </img>
-    <a href = "#"> Getting Started </a>
-    <a href = "#"> Start Building </a>
-    <a href = "#"> Q&A </a>
-  </div>
-  <div>
-    <button> Get Qblox </button>
-  </div>
-  </nav>
+
 ## Where colorfull Cubes meets 3-Dimentional Art
 
 The groundbreaking inter-locking cubes that redefine how we build.
