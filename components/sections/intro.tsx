@@ -9,9 +9,9 @@ interface WaveSectionProps {
 export function WaveSection({ title, text }: WaveSectionProps) {
   return (
     <section className="relative bg-sky-100 text-sky-900 overflow-hidden rounded-4xl">
-      <div className="container mx-auto px-6 py-12 pb-18">
+      <div className="container mx-auto px-6  sm:py-12 pb-18">
         {title && (
-          <h2 className="text-4xl sm:text-4xl font-extrabold drop-shadow-sm mb-4">
+          <h2 className="text-4xl sm:text-8xl font-extrabold drop-shadow-sm mb-4">
             {title}
           </h2>
         )}
@@ -37,20 +37,25 @@ export default function Intro() {
   return (
     <section className="py-32">
       <div className="container mx-auto">
-        <h1 className="text-center text-4xl font-semibold"> {intro.title}</h1>
+        <h1 className="text-center text-4xl sm:text-6xl font-semibold">
+          {" "}
+          {intro.title}
+        </h1>
         <div className="grid lg:grid-cols-2 gap-4">
           <div className="mx-auto mt-6 flex flex-col justify-center p-4 px-6 rounded-4xl">
-            {intro.content.map(
-              (c, i) =>
-                i == 0 && (
-                  <p
-                    className="text-xl mt-6 text-foreground/85 bg-sky-100 p-8 rounded-4xl"
-                    key={i}
-                  >
-                    {c}
-                  </p>
-                ),
-            )}
+            <div className="bg-sky-100 rounded-4xl p-8">
+              {intro.content.map(
+                (c, i) =>
+                  i != 2 && (
+                    <p
+                      className="text-xl leading-relaxed my-6 text-foreground/85 "
+                      key={i}
+                    >
+                      {c}
+                    </p>
+                  ),
+              )}
+            </div>
           </div>
           <div className="relative w-full aspect-square max-w-lg mx-auto ">
             <Image
@@ -88,6 +93,14 @@ export default function Intro() {
           </div>
         </div>*/}
       </div>
+      {/*<div className="max-w-7xl mx-auto relative my-12 aspect-3/2">
+        <Image
+          src="/lifestyle/QbloxFamily3.jpg"
+          fill
+          alt="family with qblox"
+          className="object-cover"
+        />
+      </div>*/}
     </section>
   );
 }

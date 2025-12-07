@@ -16,23 +16,23 @@ export default function Models() {
   const features = models.models;
 
   return (
-    <section className="py-32">
+    <section className="py-4 px-4">
       <div className="container mx-auto">
         <div className="mb-8 max-w-lg text-center mx-auto">
-          <h2 className="mb-3 text-3xl font-semibold md:mb-4 md:text-4xl lg:mb-6">
+          <h2 className="mb-3 pb-8 text-3xl font-semibold md:mb-4 md:text-4xl lg:mb-6">
             {title}
           </h2>
 
-          <p className="text-muted-foreground mb-8 lg:text-lg">{description}</p>
+          {/*<p className="text-muted-foreground mb-8 lg:text-lg">{description}</p>*/}
         </div>
         <div className="max-w-4xl mx-auto grid gap-6 md:grid-cols-2 lg:gap-8">
           {features.map((m: Model) => (
             <div
               key={m.id}
-              className="border-border flex md:flex-col overflow-clip rounded-xl border"
+              className="border-border sm:flex md:flex-col overflow-clip rounded-xl border"
             >
-              <a href={m.url} className="w-full lg:w-2/3 md:mx-auto">
-                <div className="relative w-full aspect-square">
+              <div className="w-full sm:w-2/5 md:w-full max-w-sm mx-auto md:mx-auto shrink-0">
+                <div className="relative w-full mx-auto aspect-square">
                   <Image
                     src={`/${m.image}`}
                     alt={m.heading}
@@ -41,7 +41,7 @@ export default function Models() {
                     sizes="100vw"
                   />
                 </div>
-              </a>
+              </div>
 
               <div className="px-6 py-8 md:px-8 md:py-10 lg:px-10 lg:py-12">
                 <h3 className="mb-3 text-lg font-semibold md:mb-4 md:text-2xl lg:mb-6">
