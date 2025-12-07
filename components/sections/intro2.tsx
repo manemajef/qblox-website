@@ -1,58 +1,22 @@
 import intro from "@/content/sections/intro.json";
 import Image from "next/image";
-
-interface WaveSectionProps {
-  title?: string;
-  text: string;
-}
-
-export function WaveSection({ title, text }: WaveSectionProps) {
-  return (
-    <section className="relative bg-sky-100 text-sky-900 overflow-hidden rounded-4xl">
-      <div className="container mx-auto px-6 py-12 pb-18">
-        {title && (
-          <h2 className="text-4xl sm:text-4xl font-extrabold drop-shadow-sm mb-4">
-            {title}
-          </h2>
-        )}
-        <p className="max-w-lg  text-lg font-medium leading-relaxed">{text}</p>
-      </div>
-
-      {/* Bigger, Rounder Wave */}
-      <svg
-        className="absolute bottom-0 left-0 w-full"
-        viewBox="0 0 1440 180"
-        preserveAspectRatio="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M0,120 C300,200 1140,40 1440,140 L1440,180 L0,180 Z"
-          fill="#ffffff"
-        />
-      </svg>
-    </section>
-  );
-}
-export default function Intro() {
+export default function Intro2() {
   return (
     <section className="py-32">
       <div className="container mx-auto">
         <h1 className="text-center text-4xl font-semibold"> {intro.title}</h1>
-        <div className="grid lg:grid-cols-2 gap-4">
+        <div className="grid md:grid-cols-2 gap-4">
           <div className="mx-auto mt-6 flex flex-col justify-center p-4 px-6 rounded-4xl">
-            {intro.content.map(
-              (c, i) =>
-                i == 0 && (
-                  <p
-                    className="text-xl mt-6 text-foreground/85 bg-sky-100 p-8 rounded-4xl"
-                    key={i}
-                  >
-                    {c}
-                  </p>
-                ),
-            )}
+            {intro.content.map((c, i) => (
+              <p
+                className="text-xl mt-6 text-foreground/85 bg-sky-100 p-6 rounded-4xl"
+                key={i}
+              >
+                {c}
+              </p>
+            ))}
           </div>
-          <div className="relative w-full aspect-square max-w-lg mx-auto ">
+          <div className="relative w-full aspect-square ">
             <Image
               src="/product/large-pac-set.jpg"
               fill

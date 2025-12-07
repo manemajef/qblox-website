@@ -57,7 +57,12 @@ export default function Navbar() {
 
         <div className="ml-auto flex items-center gap-3">
           <NavigationMenu className="">
-            <Button asChild variant="outline" size="sm">
+            <Button
+              className="border text-primary border-primary"
+              asChild
+              variant="outline"
+              size="sm"
+            >
               <Link href="#pricing">Get Qblox</Link>
             </Button>
             <NavigationMenuList className="md:hidden">

@@ -10,7 +10,7 @@ const Qblox = ({ className }: { className?: string }) => (
 );
 export default function Hero() {
   return (
-    <section className="py-32">
+    <section className="py-12 lg:py-32">
       <div className="container mx-auto">
         <div className="grid items-center gap-8 lg:grid-cols-5 xl:gap-32">
           <div className="flex flex-col items-center text-center max-w-xl mx-auto lg:items-start lg:text-left lg:col-span-2 ">
@@ -19,11 +19,18 @@ export default function Hero() {
             </h1>*/}
 
             <Qblox className="text-8xl font-bold leading-tighter" />
-            <Lead className="tracking-tighter text-sky-800 leading-tighter font-medium text-2xl">
+            <Lead className="tracking-tighter text-sky-800 leading-tighter font-medium text-2xl ">
               {hero.title}
             </Lead>
             <div className="mt-4 mb-8">
-              <p className="text-muted-foreground text-lg">{hero.content}</p>
+              <p className="text-muted-foreground text-lg max-w-lg mx-auto">
+                {hero.content.map((c, i) => (
+                  <span key={i} className="">
+                    {c}
+                    <span className="min-w-4" />
+                  </span>
+                ))}
+              </p>
               {/*{hero.content.map((c, i) => (
                 <p className="text-muted-foreground text-lg" key={i}>
                   {c}
@@ -36,7 +43,9 @@ export default function Hero() {
             </p>*/}
             <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
               <Button asChild className="w-full sm:w-auto">
-                <a href="#">Get Qblox</a>
+                <a href="https://www.amazon.com/QBLOX-Construction-Multi-Directional-Educational-Structures/dp/B0FLZ79GD4/ref=sr_1_2?crid=2C8HG2DDUXLTK&dib=eyJ2IjoiMSJ9.utt9lx44OGUJD1qA-xnY63I4ybCMQ8UD1IBs7wkzpM8.R-XyQs7VKFo8aNbdkNWjZxGHTFk8zpRdPxM8AFPXZco&dib_tag=se&keywords=qblox&qid=1765110496&sprefix=qblo%2Caps%2C244&sr=8-2&th=1">
+                  Get Qblox
+                </a>
               </Button>
               <Button variant="outline" asChild className="w-full sm:w-auto">
                 <a href="#">Learn more</a>

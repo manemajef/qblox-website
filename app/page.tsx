@@ -12,10 +12,11 @@ export default function Home() {
     <div className="max-w-6xl mx-auto">
       <Hero />
       <Intro />
-      <Features />
+
       <div id="guide">
         <Models />
       </div>
+      <Features />
       <div id="pricing">
         <Pricing />
       </div>
