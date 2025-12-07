@@ -54,7 +54,7 @@ export default function Hero() {
           </div>
           <div className="lg:col-span-3">
             <iframe
-              className="aspect-video rounded-xl"
+              className="aspect-video rounded-xl w-full"
               src="https://www.youtube.com/embed/t_Us_D8lJIU?si=mNHGElRhjMoZmC7Sa&autoplay=1&loop=1&controls=0&rel=1&mute=1&loop=1&playlist=t_Us_D8lJIU"
               title="YouTube video player"
               frameBorder="0"
