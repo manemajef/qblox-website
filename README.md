@@ -1,5 +1,26 @@
 # Qblox
 
+## Info 
+- [Current Link](https://qblox-website.vercel.app)
+- Tech: `NextJS`, `ShadCN`, `TailwindCss`
+
+### TODOS
+- [ ] Fix Models text 
+- [ ] Fix Links 
+- [ ] Fix Navbar 
+- [ ] Make video embed at right length
+- [ ] unfiy layout:
+  - [ ] Make `<Hading>` component
+  - [ ] Make `<Section>` component
+- [ ] Make transitions work 
+- [ ] Animate 
+- [ ] Fix mute button 
+- [ ] Contact us page + contact api
+- [ ] Make additonal Pages:
+  - [ ] About us 
+  - [ ] How Qblox is Made
+  - [ ] Tutorials 
+
 ## Where colorfull Cubes meets 3-Dimentional Art
 
 The groundbreaking inter-locking cubes that redefine how we build.
