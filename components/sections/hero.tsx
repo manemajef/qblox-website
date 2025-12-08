@@ -3,10 +3,10 @@ import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 import { Lead } from "../ui/typography";
 const Qblox = ({ className }: { className?: string }) => (
-  <h1 className={cn("text-2xl text-semibold text-sky-800", className)}>
+  <span className={cn(" text-sky-800", className)}>
     <span className="text-red-700">Q</span>BL
     <span className="text-red-700">O</span>X
-  </h1>
+  </span>
 );
 export default function Hero() {
   const link =
@@ -19,11 +19,22 @@ export default function Hero() {
             {/*<h1 className="my-6 text-pretty text-4xl font-bold lg:text-3xl">
               {hero.title}
             </h1>*/}
-
-            <Qblox className="text-6xl sm:text-8xl font-bold leading-tighter" />
-            <Lead className="tracking-tighter text-sky-800 leading-tighter font-medium text-xl sm:text-2xl ">
+            {/*<h1>
+              <Qblox className="text-6xl sm:text-8xl font-bold leading-tighter" />
+            </h1>*/}
+            {/*<Lead className="tracking-tighter font-saira  text-sky-800 leading-tighter font-medium text-lg sm:text-xl ">
               {hero.title}
-            </Lead>
+            </Lead>*/}
+            <h1 className="text-34xl font-semibold sm:text-6xl text-foreground/85 align-middle leading-tighter">
+              {/*Rediscover Shape And Color With{" "}*/}
+              {/*Let creativity take shape with{" "}*/}
+              {/*Discover 3D Creativity with{" "}*/}
+              <Qblox className="text-6xl sm:text-8xl" />
+            </h1>
+            {/*<h2 className="tracking-tighter text-lg sm:text-xl font-saira  text-sky-800 leading-tight font-medium ">
+              {hero.title}
+            </h2>*/}
+
             <div className="mt-4 mb-8">
               <p className="text-muted-foreground text-lg max-w-lg mx-auto">
                 {hero.content.map((c, i) => (

@@ -1,5 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Saira+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 @import "tailwindcss";
 @import "tw-animate-css";
+/*@import url("https://fonts.cdnfonts.com/css/eurostile");*/
 
 @custom-variant dark (&:is(.dark *));
 
@@ -8,6 +11,9 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-saira: "Saira Semi Condensed", sans-serif;
+  --font-play: "Play", "sans-serif";
+  /*--font-heading: "Eurostile", "Eurostile Normal";*/
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -118,5 +124,10 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-saira;
   }
 }
