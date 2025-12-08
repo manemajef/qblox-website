@@ -1,30 +1,41 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
-} from "@/components/ui/navigation-menu";
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { Menu } from "lucide-react";
 
 import { Button } from "../ui/button";
+import { cn } from "@/lib/utils";
 
 const links = [
-  { label: "Getting Started", href: "#intro" },
+  { label: "Getting Started", href: "/v2" },
   { label: "Start Building", href: "#models" },
   { label: "Q&A", href: "#qa" },
   { label: "Pricing", href: "#pricing" },
 ];
 
+const GetQblox = () => (
+  <Link
+    href="#"
+    className="text-sm font-semibold text-primary transition hover:underline"
+  >
+    Get Qblox
+  </Link>
+);
 export default function Navbar() {
+  const headerClass =
+    "sticky top-0 z-50 w-full bg-background/85 backdrop-blur supports-backdrop-filter:bg-background/75";
+  const linkClass = "transition text-foreground/80 hover:text-foreground";
+
   return (
-    <header className="sticky top-0 z-50 border-b bg-background/85 backdrop-blur supports-backdrop-filter:bg-background/75">
-      <div className="container mx-auto flex items-center gap-6 py-4">
+    <header className={headerClass}>
+      <div className="container mx-auto flex items-center gap-6 py-4 px-4">
         <Link
           href="/"
           className="flex items-center gap-3 shrink-0"
@@ -42,62 +53,43 @@ export default function Navbar() {
 
         <nav
           aria-label="Primary"
-          className="hidden md:flex items-center gap-6 text-sm font-medium text-foreground/80"
+          className="hidden md:flex items-center gap-6 text-sm font-medium"
         >
           {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="transition hover:text-foreground"
-            >
+            <Link key={link.href} href={link.href} className={linkClass}>
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <div className="ml-auto flex items-center gap-3">
-          <NavigationMenu className="">
-            <Button
-              className="border text-primary border-primary"
-              asChild
-              variant="outline"
-              size="sm"
-            >
-              <Link href="#pricing">Get Qblox</Link>
-            </Button>
-            <NavigationMenuList className="md:hidden">
-              <NavigationMenuItem>
-                <NavigationMenuTrigger>
-                  <Menu />
-                </NavigationMenuTrigger>
-                <NavigationMenuContent className="">
-                  {links.map((link, i) => (
-                    <NavigationMenuLink key={i}>
-                      <Link href={link.href} className="">
-                        {link.label}
-                      </Link>
-                    </NavigationMenuLink>
-                  ))}
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+        <div className="ml-auto hidden md:block">
+          <GetQblox />
+        </div>
+        <div className="ml-auto md:hidden">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild className="md:hidden">
+              <Button variant="outline" size="icon">
+                <Menu className="h-5 w-5" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="min-w-[200px]">
+              <DropdownMenuLabel className="font-semibold">
+                Menu
+              </DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              {links.map((link) => (
+                <DropdownMenuItem key={link.href} asChild>
+                  <Link href={link.href}>{link.label}</Link>
+                </DropdownMenuItem>
+              ))}
+              <DropdownMenuSeparator />
+              <DropdownMenuItem asChild>
+                <GetQblox />
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </div>
-
-      {/*<div className="md:hidden border-t bg-background/90">
-        <div className="container mx-auto flex gap-4 overflow-x-auto px-4 py-3 text-sm font-medium text-foreground/80">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="shrink-0 rounded-full border px-3 py-1.5 transition hover:border-primary/60 hover:text-foreground"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </div>
-      </div>*/}
     </header>
   );
 }

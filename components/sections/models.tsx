@@ -25,7 +25,7 @@ export default function Models() {
 
           {/*<p className="text-muted-foreground mb-8 lg:text-lg">{description}</p>*/}
         </div>
-        <div className="max-w-4xl mx-auto grid gap-6 md:grid-cols-2 lg:gap-8">
+        <div className="max-w-7xl mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {features.map((m: Model) => (
             <div
               key={m.id}
@@ -53,22 +53,6 @@ export default function Models() {
               </div>
             </div>
           ))}
-        </div>
-        <div className="mt-12">
-          <div className="max-w-4xl p-8 rounded-xl shadow bg-red-200/75 mx-auto">
-            <h2 className="text-2xl font-semibold text-red-950">
-              {models.repair.title}
-            </h2>
-
-            <p className="mt-6 text-lg text-foreground/85">
-              {models.repair.content}
-            </p>
-            <div className="flex justify-end mt-8">
-              <Button asChild className="">
-                <a href="#">See the Guide</a>
-              </Button>
-            </div>
-          </div>
         </div>
       </div>
     </section>

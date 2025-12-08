@@ -70,7 +70,7 @@ const FeatureInteractive = ({
 export default function Features() {
   return (
     <section className="py-24" id={features.id}>
-      <div className="container mx-auto max-w-6xl p-8">
+      <div className="container mx-auto max-w-6xl p-4">
         <h1 className="text-4xl font-semibold text-center">{features.title}</h1>
         {/*{features.features.map((f: FeatureType, i) => (
           <FeatureInteractive
@@ -94,7 +94,7 @@ export default function Features() {
               />
             ))}
           </div>
-          <div className="grid sm:grid-cols-2 gap-12">
+          <div className="grid sm:grid-cols-2 gap-8">
             {features.features.map((f: FeatureType, i) => (
               <Feature title={f.title} img={f.img} content={f.content} key={i} />
             ))}
