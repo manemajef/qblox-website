@@ -19,7 +19,7 @@ export default function Models() {
     <section className="py-4 px-4">
       <div className="container mx-auto">
         <div className="mb-8 max-w-lg text-center mx-auto">
-          <h2 className="mb-3 pb-8 text-3xl font-semibold md:mb-4 md:text-4xl lg:mb-6">
+          <h2 className="mb-3 pb-8 text-4xl font-semibold md:mb-4 md:text-4xl lg:mb-6">
             {title}
           </h2>
 

@@ -15,7 +15,7 @@ export default function Hero() {
     <section className="py-24 lg:py-32">
       <div className="container mx-auto">
         <div className="grid items-center gap-8 lg:grid-cols-5 xl:gap-32">
-          <div className="flex flex-col items-center text-center max-w-xl mx-auto lg:items-start lg:text-left lg:col-span-2 ">
+          <div className="flex flex-col items-center text-center max-w-xl mx-auto lg:items-start lg:text-left lg:col-span-2 px-4">
             {/*<h1 className="my-6 text-pretty text-4xl font-bold lg:text-3xl">
               {hero.title}
             </h1>*/}
@@ -25,18 +25,18 @@ export default function Hero() {
             {/*<Lead className="tracking-tighter font-saira  text-sky-800 leading-tighter font-medium text-lg sm:text-xl ">
               {hero.title}
             </Lead>*/}
-            <h1 className="text-34xl font-semibold sm:text-6xl text-foreground/85 align-middle leading-tighter">
+            <h1 className="text-4xl font-semibold sm:text-6xl text-foreground/85 align-middle leading-tighter">
               {/*Rediscover Shape And Color With{" "}*/}
               {/*Let creativity take shape with{" "}*/}
               {/*Discover 3D Creativity with{" "}*/}
-              <Qblox className="text-6xl sm:text-8xl" />
+              <Qblox className="text-7xl sm:text-8xl" />
             </h1>
-            {/*<h2 className="tracking-tighter text-lg sm:text-xl font-saira  text-sky-800 leading-tight font-medium ">
+            <h2 className="hidden lg:block tracking-tighter text-xl sm:text-2xl font-saira  text-sky-800 leading-tight font-medium ">
               {hero.title}
-            </h2>*/}
+            </h2>
 
             <div className="mt-4 mb-8">
-              <p className="text-muted-foreground text-lg max-w-lg mx-auto">
+              <p className="text-muted-foreground text-lg max-w-lg  mx-auto">
                 {hero.content.map((c, i) => (
                   <span key={i} className="">
                     {c}
@@ -44,6 +44,10 @@ export default function Hero() {
                   </span>
                 ))}
               </p>
+              {/*<blockquote className="mt-4 text-muted-foreground text-start  font-semibold ">
+                <i className="border-l-2 pl-2">{hero.title} </i>
+              </blockquote>*/}
+
               {/*{hero.content.map((c, i) => (
                 <p className="text-muted-foreground text-lg" key={i}>
                   {c}
