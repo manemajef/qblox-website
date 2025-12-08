@@ -29,7 +29,7 @@ export default function Models() {
           {features.map((m: Model) => (
             <div
               key={m.id}
-              className="border-border sm:flex md:flex-col overflow-clip rounded-xl border"
+              className="border-border sm:flex md:flex-col max-w-sm mx-auto sm:max-w-none overflow-clip rounded-xl border"
             >
               <div className="w-full sm:w-2/5 md:w-full max-w-sm mx-auto md:mx-auto shrink-0">
                 <div className="relative w-full mx-auto aspect-square">

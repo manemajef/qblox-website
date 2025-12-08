@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 export default function Repair() {
   return (
     <section className="py-16">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4">
         <div className="grid gap-10 rounded-3xl border shadow-red-200 bg-white p-10 shadow-sm md:grid-cols-2">
           <div className="space-y-4">
             <span className="inline-flex items-center rounded-full  px-3 py-1 text-xs font-semibold uppercase tracking-wide text-foreground shadow-sm bg-red-200">
