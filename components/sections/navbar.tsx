@@ -28,18 +28,34 @@ const GetQbloxButton = ({ className }: { className?: string }) => (
   </Link>
 );
 
-const NavbarFloat = () => (
-  <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 hidden xl:block">
-    <nav className="flex items-center gap-6 text-sm font-medium bg-black/20 backdrop-blur-md px-8 py-3 rounded-full shadow-2xl shadow-black/50">
-      {links.map((link) => (
-        <Link
-          key={link.href}
-          href={link.href}
-          className="text-white hover:text-white hover:underline transition-all"
-        >
-          {link.label}
-        </Link>
-      ))}
+const NavbarFloat = ({ isVisible }: { isVisible: boolean }) => (
+  <div
+    className={cn(
+      "fixed top-2 left-1/2 -translate-x-1/2 z-50 hidden xl:block transition-all duration-300",
+      isVisible
+        ? "opacity-100 scale-100"
+        : "opacity-0 scale-95 pointer-events-none",
+    )}
+  >
+    <nav className="flex items-center gap-6 text-sm font-semibold bg-black/20 backdrop-blur-md px-8 py-3 rounded-full shadow-2xl shadow-black/50">
+      <div className="flex items-center gap-6">
+        {links.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className="text-white/90 hover:text-white hover:scale-105 transition-all border-b border-white/20 hover:border-white/60 leading-none pb-px"
+          >
+            {link.label}
+          </Link>
+        ))}
+      </div>
+      <div className="w-px h-4 bg-white/30 mx-3" />
+      <Link
+        href={AMAZON_PRODUCT_URL}
+        className="text-white/90 hover:text-white text-xs px-3 py-1.5 border border-white/30 rounded-md hover:border-white/50 hover:bg-white/10 transition-all"
+      >
+        Get Qblox
+      </Link>
     </nav>
   </div>
 );
@@ -59,7 +75,7 @@ export default function Navbar() {
       {
         root: null,
         threshold: 0,
-        rootMargin: "-50% 0px 0px 0px",
+        rootMargin: "-80% 0px 0px 0px",
       },
     );
 
@@ -70,12 +86,12 @@ export default function Navbar() {
 
   return (
     <>
-      {isOverHero && <NavbarFloat />}
+      <NavbarFloat isVisible={isOverHero} />
       <header
         ref={headerRef}
         className={cn(
-          "sticky top-0 z-50 w-full backdrop-blur supports-backdrop-filter:bg-background/75 shadow-xl transition-colors bg-background/85",
-          isOverHero && "xl:invisible"
+          "sticky top-0 z-50 w-full backdrop-blur supports-backdrop-filter:bg-background/75 shadow-xl transition-all duration-500 bg-background/85",
+          isOverHero && "xl:opacity-0 xl:pointer-events-none",
         )}
       >
         <div className="container mx-auto flex items-center gap-6 py-4 px-4">
@@ -110,7 +126,7 @@ export default function Navbar() {
           </nav>
 
           <div className="ml-auto hidden md:block">
-            <GetQbloxButton className="text-sm font-semibold transition hover:underline border rounded-md py-2 px-4 text-primary hover:text-primary/80" />
+            <GetQbloxButton className="text-sm font-semibold transition hover:underline border border-primary/50 rounded-md py-2 px-4 text-primary hover:text-primary/80" />
           </div>
           <div className="ml-auto md:hidden">
             <DropdownMenu>
