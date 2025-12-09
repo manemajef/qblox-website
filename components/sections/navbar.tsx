@@ -11,9 +11,9 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Menu } from "lucide-react";
-
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
+import { AMAZON_PRODUCT_URL } from "@/lib/constants";
 
 const links = [
   { label: "Getting Started", href: "/v2" },
@@ -21,8 +21,13 @@ const links = [
   { label: "Q&A", href: "#qa" },
   { label: "Pricing", href: "#pricing" },
 ];
-const amazonLink =
-  "https://www.amazon.com/QBLOX-Construction-Multi-Directional-Educational-Structures/dp/B0FLZ79GD4/ref=sr_1_2?crid=2C8HG2DDUXLTK&dib=eyJ2IjoiMSJ9.utt9lx44OGUJD1qA-xnY63I4ybCMQ8UD1IBs7wkzpM8.R-XyQs7VKFo8aNbdkNWjZxGHTFk8zpRdPxM8AFPXZco&dib_tag=se&keywords=qblox&qid=1765110496&sprefix=qblo%2Caps%2C244&sr=8-2&th=1";
+
+const GetQbloxButton = ({ className }: { className?: string }) => (
+  <Link href={AMAZON_PRODUCT_URL} className={className}>
+    Get Qblox
+  </Link>
+);
+
 export default function Navbar() {
   const [isOverHero, setIsOverHero] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
@@ -56,20 +61,12 @@ export default function Navbar() {
 
   const linkClass = cn(
     "transition hover:text-foreground",
-    isOverHero
-      ? "xl:text-white xl:hover:underline xl:hover:text-white  text-foreground/80"
-      : "text-foreground/80",
+    isOverHero ? "xl:text-white xl:hover:underline text-foreground/80" : "text-foreground/80"
   );
+
   const getQbloxClass = cn(
-    "text-sm font-semibold transition hover:underline border  rounded-md py-2 px-4",
-    isOverHero
-      ? "xl:text-white bg-white/10 xl:hover:text-white xl:hover:underline "
-      : "text-primary hover:text-primary/80",
-  );
-  const GetQblox = () => (
-    <Link href={amazonLink} className={getQbloxClass}>
-      Get Qblox
-    </Link>
+    "text-sm font-semibold transition hover:underline border rounded-md py-2 px-4",
+    isOverHero ? "xl:text-white bg-white/10 xl:hover:underline" : "text-primary hover:text-primary/80"
   );
 
   return (
@@ -120,11 +117,11 @@ export default function Navbar() {
         </nav>
 
         <div className="ml-auto hidden md:block">
-          <GetQblox />
+          <GetQbloxButton className={getQbloxClass} />
         </div>
         <div className="ml-auto md:hidden">
           <DropdownMenu>
-            <DropdownMenuTrigger asChild className="md:hidden">
+            <DropdownMenuTrigger asChild>
               <Button variant="outline" size="icon">
                 <Menu className="h-5 w-5" />
               </Button>
@@ -141,7 +138,7 @@ export default function Navbar() {
               ))}
               <DropdownMenuSeparator />
               <DropdownMenuItem asChild>
-                <GetQblox />
+                <GetQbloxButton className={getQbloxClass} />
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>

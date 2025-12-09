@@ -28,24 +28,26 @@ export default function Footer() {
             </div>
           </div>
 
-          {footer.button && (
+          {footer.button?.url && (
             <Button asChild size="lg">
-              <Link href={footer.button.url || "#"}>{footer.button.label}</Link>
+              <Link href={footer.button.url}>{footer.button.label}</Link>
             </Button>
           )}
         </div>
 
-        <div className="flex flex-wrap items-center gap-4 text-sm">
-          {footer.links?.map((link) => (
-            <Link
-              key={link.url}
-              href={link.url}
-              className="rounded-full border px-3 py-1.5 text-foreground/85 transition hover:border-primary/60 hover:text-foreground"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </div>
+        {footer.links && footer.links.length > 0 && (
+          <div className="flex flex-wrap items-center gap-4 text-sm">
+            {footer.links.map((link) => (
+              <Link
+                key={link.url}
+                href={link.url}
+                className="rounded-full border px-3 py-1.5 text-foreground/85 transition hover:border-primary/60 hover:text-foreground"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        )}
 
         <div className="flex flex-col gap-2 border-t pt-6 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between">
           <Small className="text-muted-foreground">{footer.tagline}</Small>

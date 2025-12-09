@@ -2,6 +2,7 @@ import hero from "@/content/sections/hero.json";
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { AMAZON_PRODUCT_URL } from "@/lib/constants";
 
 const QbloxWordmark = ({ className }: { className?: string }) => (
   <span className={cn("text-sky-800", className)}>
@@ -16,14 +17,12 @@ const HeroButtons = ({ link }: { link: string }) => (
       <a href={link}>Get Qblox</a>
     </Button>
     <Button variant="outline" asChild>
-      <a href="#learn-more">Learn more</a>
+      <a href="#guide">Learn more</a>
     </Button>
   </div>
 );
 
-export default function NewIntro() {
-  const link =
-    "https://www.amazon.com/QBLOX-Construction-Multi-Directional-Educational-Structures/dp/B0FLZ79GD4/ref=sr_1_2?crid=2C8HG2DDUXLTK&dib=eyJ2IjoiMSJ9.utt9lx44OGUJD1qA-xnY63I4ybCMQ8UD1IBs7wkzpM8.R-XyQs7VKFo8aNbdkNWjZxGHTFk8zpRdPxM8AFPXZco&dib_tag=se&keywords=qblox&qid=1765110496&sprefix=qblo%2Caps%2C244&sr=8-2&th=1";
+export default function Intro() {
 
   return (
     <section className="py-12 md:py-24">
@@ -40,7 +39,7 @@ export default function NewIntro() {
               <p key={i}>{c}</p>
             ))}
           </div>
-          <HeroButtons link={link} />
+          <HeroButtons link={AMAZON_PRODUCT_URL} />
         </div>
 
         <div className="relative w-full aspect-square max-w-lg mx-auto">
@@ -48,7 +47,7 @@ export default function NewIntro() {
             src="/product/large-pac-set.jpg"
             fill
             className="object-cover object-center rounded-4xl"
-            alt=""
+            alt="Qblox construction set package"
           />
         </div>
       </div>

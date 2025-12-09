@@ -1,15 +1,13 @@
-// import hero from "@/content/sections/hero.json";
 import { Button } from "../ui/button";
 import { ExternalLink, Volume2 } from "lucide-react";
-const youtube = "https://www.youtube.com/watch?v=t_Us_D8lJIU";
+import { YOUTUBE_URL, YOUTUBE_EMBED_URL } from "@/lib/constants";
 
 function HeroVideo() {
   return (
     <div className="absolute inset-0">
       <iframe
         className="h-full w-full"
-        src="https://www.youtube.com/embed/t_Us_D8lJIU?autoplay=1&controls=0&rel=1&mute=1&loop=1&playlist=t_Us_D8lJIU&iv_load_policy
-=3&start=6&end=53"
+        src={YOUTUBE_EMBED_URL}
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
@@ -31,7 +29,7 @@ function HeroControls() {
             className="h-9 w-9 rounded-full text-white hover:bg-white/15"
             asChild
           >
-            <a href={youtube} aria-label="Toggle sound">
+            <a href={YOUTUBE_URL} aria-label="Watch with sound on YouTube">
               <Volume2 className="h-4 w-4" />
             </a>
           </Button>
@@ -41,7 +39,7 @@ function HeroControls() {
             className="h-9 w-9 rounded-full text-white hover:bg-white/15"
             asChild
           >
-            <a href={youtube} aria-label="Open on YouTube">
+            <a href={YOUTUBE_URL} aria-label="Open on YouTube">
               <ExternalLink className="h-4 w-4" />
             </a>
           </Button>
@@ -51,19 +49,19 @@ function HeroControls() {
   );
 }
 
-const HeroContent = ({ link }: { link: string }) => (
+const HeroContent = () => (
   <div className="relative z-10 flex h-full items-center justify-center px-4 py-16">
     <div className="flex flex-col items-center gap-6 text-center text-white">
       <div className="flex flex-col items-center gap-3 sm:flex-row">
-        <Button asChild className="">
+        <Button asChild>
           <a href="#intro">Explore Qblox</a>
         </Button>
         <Button
           variant="outline"
           asChild
-          className="border-white/60 bg-white/0  text-white hover:bg-white/10 hover:text-white"
+          className="border-white/60 bg-white/0 text-white hover:bg-white/10 hover:text-white"
         >
-          <a href="#intro">Contact Us</a>
+          <a href="#pricing">Get Started</a>
         </Button>
       </div>
     </div>
@@ -84,7 +82,7 @@ export default function Hero() {
         </div>
 
         <div className="hidden sm:block h-full">
-          <HeroContent link="#intro" />
+          <HeroContent />
         </div>
       </section>
     </div>

@@ -1,6 +1,5 @@
 import models from "@/content/sections/models.json";
 import Image from "next/image";
-import { Button } from "../ui/button";
 
 interface Model {
   id: string;
@@ -11,9 +10,7 @@ interface Model {
 }
 
 export default function Models() {
-  const title = models.title;
-  const description = models.description;
-  const features = models.models;
+  const { title, models: modelsList } = models;
 
   return (
     <section className="py-4 px-4">
@@ -22,11 +19,9 @@ export default function Models() {
           <h2 className="mb-3 pb-8 text-4xl font-semibold md:mb-4 md:text-4xl lg:mb-6">
             {title}
           </h2>
-
-          {/*<p className="text-muted-foreground mb-8 lg:text-lg">{description}</p>*/}
         </div>
         <div className="max-w-7xl mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {features.map((m: Model) => (
+          {modelsList.map((m: Model) => (
             <div
               key={m.id}
               className="border-border sm:flex md:flex-col max-w-sm mx-auto sm:max-w-none overflow-clip rounded-xl border"

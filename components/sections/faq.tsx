@@ -10,9 +10,9 @@ export default function FAQ() {
   return (
     <section className="my-24">
       <div className="container mx-auto">
-        <h1 className="text-4xl font-semibold text-center">Q&A</h1>
+        <h1 className="text-4xl font-semibold text-center">{faq.title || "Q&A"}</h1>
       </div>
-      <div className="mt-12 max-w-4xl mx-auto m-4">
+      <div className="mt-12 max-w-4xl mx-auto px-4">
         <Accordion
           type="single"
           collapsible

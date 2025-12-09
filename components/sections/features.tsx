@@ -6,14 +6,13 @@ interface FeatureType {
   title: string;
   img: string;
   content: string;
-  left?: boolean;
 }
 
 const Feature = ({ title, img, content }: FeatureType) => {
   return (
-    <div className="border rounded-xl  overflow-hidden  pb-4 mx-auto mt-4">
+    <div className="border rounded-xl overflow-hidden pb-4 mx-auto mt-4">
       <div className="aspect-square relative">
-        <Image src={img} fill alt="" className="object-cover" />
+        <Image src={img} fill alt={title} className="object-cover" />
       </div>
       <div className="mt-4 p-4">
         <Large className="text-xl">{title}</Large>

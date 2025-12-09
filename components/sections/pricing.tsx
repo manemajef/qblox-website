@@ -39,7 +39,7 @@ const SetCard = ({ set }: { set: SetType }) => {
 export default function Pricing() {
   return (
     <section className="py-24" id="pricing">
-      <div className="">
+      <div className="container mx-auto">
         <div className="text-center space-y-3">
           <h1 className="text-4xl font-semibold text-balance">{cta.title}</h1>
           <Lead className="text-lg text-muted-foreground">{cta.subtitle}</Lead>
@@ -47,7 +47,7 @@ export default function Pricing() {
 
         <div className="space-y-10">
           <div className="grid gap-6 xl:grid-cols-2">
-            {cta.sets.map((set: SetType) => (
+            {cta.sets.map((set) => (
               <SetCard key={set.id} set={set} />
             ))}
           </div>

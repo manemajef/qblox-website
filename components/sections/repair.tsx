@@ -1,6 +1,6 @@
-import models from "@/content/sections/models.json";
 import repair from "@/content/sections/repair.json";
 import { Button } from "../ui/button";
+
 export default function Repair() {
   return (
     <section className="py-16">
@@ -20,7 +20,7 @@ export default function Repair() {
 
           <div className="space-y-4 rounded-2xl bg-muted/50 p-6 shadow-sm">
             <h3 className="text-xl font-semibold text-foreground">Quick check</h3>
-            <ul className="space-y-3 text-foreground/85 leading-relaxed list-disc">
+            <ul className="space-y-3 text-foreground/85 leading-relaxed">
               {repair.list.map((l, i) => (
                 <li className="flex items-baseline gap-3" key={i}>
                   <span className="mt-1.5 size-1.5 flex-none rounded-full bg-primary/70" />
@@ -30,7 +30,7 @@ export default function Repair() {
             </ul>
             <div className="pt-2">
               <Button asChild>
-                <a href="#">See the guide</a>
+                <a href="#guide">See the guide</a>
               </Button>
             </div>
           </div>
