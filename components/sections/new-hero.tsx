@@ -22,7 +22,7 @@ const HeroOverlay = () => <div className="absolute inset-0 bg-black/35" />;
 
 function HeroControls() {
   return (
-    <div className="absolute inset-x-0 top-0 xl:top-20 z-20 flex justify-end p-4">
+    <div className="absolute inset-x-0 top-0 xl:top-5 z-20 flex justify-end p-4">
       <div className="w-full max-w-7xl mx-auto flex justify-end">
         <div className="flex items-center gap-2 rounded-full bg-black/40 px-2 py-1 backdrop-blur">
           <Button
@@ -72,8 +72,11 @@ const HeroContent = ({ link }: { link: string }) => (
 
 export default function Hero() {
   return (
-    <div className="">
-      <section className="relative isolate w-full aspect-video overflow-hidden">
+    <div className="xl:-mt-24 xl:z-50">
+      <section
+        id="hero-section"
+        className="relative isolate w-full aspect-video overflow-hidden"
+      >
         <HeroVideo />
         <HeroOverlay />
         <div className="max-w-7xl mx-auto">

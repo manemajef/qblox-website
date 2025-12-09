@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState, useRef } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -20,31 +22,85 @@ const links = [
   { label: "Pricing", href: "#pricing" },
 ];
 
-const GetQblox = () => (
-  <Link
-    href="#"
-    className="text-sm font-semibold text-primary transition hover:underline"
-  >
-    Get Qblox
-  </Link>
-);
 export default function Navbar() {
-  const headerClass =
-    "sticky top-0 z-50 w-full bg-background/85 backdrop-blur supports-backdrop-filter:bg-background/75";
-  const linkClass = "transition text-foreground/80 hover:text-foreground";
+  const [isOverHero, setIsOverHero] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const heroSection = document.getElementById("hero-section");
+    if (!heroSection || !headerRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsOverHero(entry.isIntersecting);
+      },
+      {
+        root: null,
+        threshold: 0,
+        rootMargin: "0px",
+      },
+    );
+
+    observer.observe(heroSection);
+
+    return () => observer.disconnect();
+  }, []);
+
+  const headerClass = cn(
+    "sticky top-0 z-50 w-full backdrop-blur supports-backdrop-filter:bg-background/75 shadow-xl transition-colors",
+    isOverHero
+      ? "xl:bg-black/25 xl:max-w-3/5 xl:mx-auto xl:mt-6 xl:rounded-xl"
+      : "bg-background/85",
+  );
+
+  const linkClass = cn(
+    "transition hover:text-foreground",
+    isOverHero
+      ? "xl:text-white xl:hover:underline xl:hover:text-white  text-foreground/80"
+      : "text-foreground/80",
+  );
+  const getQbloxClass = cn(
+    "text-sm font-semibold transition hover:underline border  rounded-md py-2 px-4",
+    isOverHero
+      ? "xl:text-white bg-white/10 xl:hover:text-white xl:hover:underline "
+      : "text-primary hover:text-primary/80",
+  );
+  const GetQblox = () => (
+    <Link href="#" className={getQbloxClass}>
+      Get Qblox
+    </Link>
+  );
 
   return (
-    <header className={headerClass}>
+    <header ref={headerRef} className={headerClass}>
       <div className="container mx-auto flex items-center gap-6 py-4 px-4">
         <Link
           href="/"
-          className="flex items-center gap-3 shrink-0"
+          className={cn(
+            isOverHero ? "lg:hidden" : "flex items-center gap-3 shrink-0",
+          )}
           aria-label="Qblox home"
         >
           <Image
             src="/logo.png"
             alt="Qblox logo"
             width={160}
+            height={48}
+            className="h-10 w-auto"
+            priority
+          />
+        </Link>
+        <Link
+          href="/"
+          className={cn(
+            isOverHero ? "hidden lg:flex items-center gap-3 shrink-0" : "hidden",
+          )}
+          aria-label="Qblox home"
+        >
+          <Image
+            src="/logo-white-bg.png"
+            alt="Qblox logo"
+            width={140}
             height={48}
             className="h-10 w-auto"
             priority

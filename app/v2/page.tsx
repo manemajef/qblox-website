@@ -6,6 +6,7 @@ import FAQ from "@/components/sections/faq";
 import Pricing from "@/components/sections/pricing";
 import Footer from "@/components/sections/footer";
 import Features from "@/components/sections/features2";
+import Navbar from "@/components/sections/navbar";
 
 export default function Home() {
   return (
