@@ -1,7 +1,7 @@
 import hero from "@/content/sections/hero.json";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { Lead } from "../ui/typography";
+import { Lead } from "@/components/ui/typography";
 const Qblox = ({ className }: { className?: string }) => (
   <span className={cn(" text-sky-800", className)}>
     <span className="text-red-700">Q</span>BL
