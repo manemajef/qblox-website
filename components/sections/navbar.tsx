@@ -21,7 +21,8 @@ const links = [
   { label: "Q&A", href: "#qa" },
   { label: "Pricing", href: "#pricing" },
 ];
-
+const amazonLink =
+  "https://www.amazon.com/QBLOX-Construction-Multi-Directional-Educational-Structures/dp/B0FLZ79GD4/ref=sr_1_2?crid=2C8HG2DDUXLTK&dib=eyJ2IjoiMSJ9.utt9lx44OGUJD1qA-xnY63I4ybCMQ8UD1IBs7wkzpM8.R-XyQs7VKFo8aNbdkNWjZxGHTFk8zpRdPxM8AFPXZco&dib_tag=se&keywords=qblox&qid=1765110496&sprefix=qblo%2Caps%2C244&sr=8-2&th=1";
 export default function Navbar() {
   const [isOverHero, setIsOverHero] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
@@ -66,7 +67,7 @@ export default function Navbar() {
       : "text-primary hover:text-primary/80",
   );
   const GetQblox = () => (
-    <Link href="#" className={getQbloxClass}>
+    <Link href={amazonLink} className={getQbloxClass}>
       Get Qblox
     </Link>
   );
@@ -77,7 +78,7 @@ export default function Navbar() {
         <Link
           href="/"
           className={cn(
-            isOverHero ? "lg:hidden" : "flex items-center gap-3 shrink-0",
+            isOverHero ? "xl:hidden" : "flex items-center gap-3 shrink-0",
           )}
           aria-label="Qblox home"
         >
@@ -93,7 +94,7 @@ export default function Navbar() {
         <Link
           href="/"
           className={cn(
-            isOverHero ? "hidden lg:flex items-center gap-3 shrink-0" : "hidden",
+            isOverHero ? "hidden xl:flex items-center gap-3 shrink-0" : "hidden",
           )}
           aria-label="Qblox home"
         >
