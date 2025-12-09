@@ -1,106 +1,57 @@
-import intro from "@/content/sections/intro.json";
+import hero from "@/content/sections/hero.json";
+import { Button } from "../ui/button";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
-interface WaveSectionProps {
-  title?: string;
-  text: string;
-}
+const QbloxWordmark = ({ className }: { className?: string }) => (
+  <span className={cn("text-sky-800", className)}>
+    <span className="text-red-700">Q</span>BL
+    <span className="text-red-700">O</span>X
+  </span>
+);
 
-export function WaveSection({ title, text }: WaveSectionProps) {
+const HeroButtons = ({ link }: { link: string }) => (
+  <div className="flex w-full justify-center gap-3 sm:flex-row lg:justify-start">
+    <Button asChild>
+      <a href={link}>Get Qblox</a>
+    </Button>
+    <Button variant="outline" asChild>
+      <a href="#learn-more">Learn more</a>
+    </Button>
+  </div>
+);
+
+export default function NewIntro() {
+  const link =
+    "https://www.amazon.com/QBLOX-Construction-Multi-Directional-Educational-Structures/dp/B0FLZ79GD4/ref=sr_1_2?crid=2C8HG2DDUXLTK&dib=eyJ2IjoiMSJ9.utt9lx44OGUJD1qA-xnY63I4ybCMQ8UD1IBs7wkzpM8.R-XyQs7VKFo8aNbdkNWjZxGHTFk8zpRdPxM8AFPXZco&dib_tag=se&keywords=qblox&qid=1765110496&sprefix=qblo%2Caps%2C244&sr=8-2&th=1";
+
   return (
-    <section className="relative bg-sky-100 text-sky-900 overflow-hidden rounded-4xl">
-      <div className="container mx-auto px-6  sm:py-12 pb-18">
-        {title && (
-          <h2 className="text-4xl sm:text-8xl font-extrabold drop-shadow-sm mb-4">
-            {title}
+    <section className="py-12 md:py-24">
+      <div className="container mx-auto grid items-center gap-10 lg:grid-cols-2">
+        <div className="flex flex-col items-center text-center lg:items-start lg:text-left px-4 gap-6">
+          <h1 className="text-4xl font-semibold sm:text-6xl text-foreground/85 leading-tighter">
+            <QbloxWordmark className="text-7xl sm:text-8xl" />
+          </h1>
+          <h2 className="tracking-tighter text-xl sm:text-2xl font-saira text-sky-800 leading-tight font-medium">
+            {hero.title}
           </h2>
-        )}
-        <p className="max-w-lg  text-lg font-medium leading-relaxed">{text}</p>
-      </div>
-
-      {/* Bigger, Rounder Wave */}
-      <svg
-        className="absolute bottom-0 left-0 w-full"
-        viewBox="0 0 1440 180"
-        preserveAspectRatio="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M0,120 C300,200 1140,40 1440,140 L1440,180 L0,180 Z"
-          fill="#ffffff"
-        />
-      </svg>
-    </section>
-  );
-}
-export default function Intro() {
-  return (
-    <section className="py-32">
-      <div className="container mx-auto">
-        <h1 className="text-center text-4xl sm:text-6xl font-semibold">
-          {" "}
-          {intro.title}
-        </h1>
-        <div className="grid lg:grid-cols-2 gap-4">
-          <div className="mx-auto mt-6 flex flex-col justify-center p-4 px-6 rounded-4xl">
-            <div className="bg-sky-100 rounded-4xl p-8">
-              {intro.content.map(
-                (c, i) =>
-                  i != 2 && (
-                    <p
-                      className="text-xl leading-relaxed my-6 text-foreground/85 "
-                      key={i}
-                    >
-                      {c}
-                    </p>
-                  ),
-              )}
-            </div>
+          <div className="text-muted-foreground text-lg max-w-xl space-y-3">
+            {hero.content.map((c, i) => (
+              <p key={i}>{c}</p>
+            ))}
           </div>
-          <div className="relative w-full aspect-square max-w-lg mx-auto ">
-            <Image
-              src="/product/large-pac-set.jpg"
-              fill
-              className="object-cover object-center"
-              alt=""
-            />
-          </div>
+          <HeroButtons link={link} />
         </div>
-        {/*<div className="max-w-4xl  aspect-97/60 mx-auto mt-6 relative">
+
+        <div className="relative w-full aspect-square max-w-lg mx-auto">
           <Image
-            src="/modules/family.jpg"
+            src="/product/large-pac-set.jpg"
             fill
-            alt="family with qblox"
-            className="object-cover"
+            className="object-cover object-center rounded-4xl"
+            alt=""
           />
-        </div>*/}
-        {/*<div className="flex flex-col md:flex-row gap-4 mx-auto mt-12">
-          <div className="relative w-full max-w-150 aspect-square">
-            <Image
-              src="/lifestyle/child-play2.jpeg"
-              fill
-              alt=""
-              className="object-cover rounded-xl"
-            ></Image>
-          </div>
-          <div className="relative w-full max-w-150 aspect-square">
-            <Image
-              src="/lifestyle/QbloxGrandma.jpg"
-              fill
-              alt=""
-              className="object-contain rounded-xl"
-            ></Image>
-          </div>
-        </div>*/}
+        </div>
       </div>
-      {/*<div className="max-w-7xl mx-auto relative my-12 aspect-3/2">
-        <Image
-          src="/lifestyle/QbloxFamily3.jpg"
-          fill
-          alt="family with qblox"
-          className="object-cover"
-        />
-      </div>*/}
     </section>
   );
 }

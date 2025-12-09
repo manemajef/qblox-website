@@ -1,11 +1,10 @@
-import Hero from "@/components/sections/hero";
+import Hero from "@/components/sections/old/hero";
 import Models from "@/components/sections/models";
-import Intro from "@/components/sections/intro";
-// import Features from "@/components/sections/features";
+import Intro from "@/components/sections/old/intro";
 import FAQ from "@/components/sections/faq";
 import Pricing from "@/components/sections/pricing";
 import Footer from "@/components/sections/footer";
-import Features from "@/components/sections/features2";
+import Features from "@/components/sections/features";
 import Navbar from "@/components/sections/navbar";
 
 export default function Home() {

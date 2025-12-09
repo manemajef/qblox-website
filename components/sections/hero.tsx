@@ -1,85 +1,92 @@
-import hero from "@/content/sections/hero.json";
+// import hero from "@/content/sections/hero.json";
 import { Button } from "../ui/button";
-import { cn } from "@/lib/utils";
-import { Lead } from "../ui/typography";
-const Qblox = ({ className }: { className?: string }) => (
-  <span className={cn(" text-sky-800", className)}>
-    <span className="text-red-700">Q</span>BL
-    <span className="text-red-700">O</span>X
-  </span>
-);
-export default function Hero() {
-  const link =
-    "https://www.amazon.com/QBLOX-Construction-Multi-Directional-Educational-Structures/dp/B0FLZ79GD4/ref=sr_1_2?crid=2C8HG2DDUXLTK&dib=eyJ2IjoiMSJ9.utt9lx44OGUJD1qA-xnY63I4ybCMQ8UD1IBs7wkzpM8.R-XyQs7VKFo8aNbdkNWjZxGHTFk8zpRdPxM8AFPXZco&dib_tag=se&keywords=qblox&qid=1765110496&sprefix=qblo%2Caps%2C244&sr=8-2&th=1";
+import { ExternalLink, Volume2 } from "lucide-react";
+const youtube = "https://www.youtube.com/watch?v=t_Us_D8lJIU";
+
+function HeroVideo() {
   return (
-    <section className="py-24 lg:py-32">
-      <div className="container mx-auto">
-        <div className="grid items-center gap-8 lg:grid-cols-5 xl:gap-32">
-          <div className="flex flex-col items-center text-center max-w-xl mx-auto lg:items-start lg:text-left lg:col-span-2 px-4">
-            {/*<h1 className="my-6 text-pretty text-4xl font-bold lg:text-3xl">
-              {hero.title}
-            </h1>*/}
-            {/*<h1>
-              <Qblox className="text-6xl sm:text-8xl font-bold leading-tighter" />
-            </h1>*/}
-            {/*<Lead className="tracking-tighter font-saira  text-sky-800 leading-tighter font-medium text-lg sm:text-xl ">
-              {hero.title}
-            </Lead>*/}
-            <h1 className="text-4xl font-semibold sm:text-6xl text-foreground/85 align-middle leading-tighter">
-              {/*Rediscover Shape And Color With{" "}*/}
-              {/*Let creativity take shape with{" "}*/}
-              {/*Discover 3D Creativity with{" "}*/}
-              <Qblox className="text-7xl sm:text-8xl" />
-            </h1>
-            <h2 className="hidden lg:block tracking-tighter text-xl sm:text-2xl font-saira  text-sky-800 leading-tight font-medium ">
-              {hero.title}
-            </h2>
+    <div className="absolute inset-0">
+      <iframe
+        className="h-full w-full"
+        src="https://www.youtube.com/embed/t_Us_D8lJIU?autoplay=1&controls=0&rel=1&mute=1&loop=1&playlist=t_Us_D8lJIU&iv_load_policy
+=3&start=6&end=53"
+        title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+      />
+    </div>
+  );
+}
 
-            <div className="mt-4 mb-8">
-              <p className="text-muted-foreground text-lg max-w-lg  mx-auto">
-                {hero.content.map((c, i) => (
-                  <span key={i} className="">
-                    {c}
-                    <span className="min-w-4" />
-                  </span>
-                ))}
-              </p>
-              {/*<blockquote className="mt-4 text-muted-foreground text-start  font-semibold ">
-                <i className="border-l-2 pl-2">{hero.title} </i>
-              </blockquote>*/}
+const HeroOverlay = () => <div className="absolute inset-0 bg-black/35" />;
 
-              {/*{hero.content.map((c, i) => (
-                <p className="text-muted-foreground text-lg" key={i}>
-                  {c}
-                </p>
-              ))}*/}
-            </div>
-
-            {/*<p className="text-muted-foreground mb-8 mac-w-xl lg:text-lg mt-8">
-              {hero.content}
-            </p>*/}
-            <div className="flex w-full  justify-center gap-2 sm:flex-row lg:justify-start">
-              <Button asChild className="">
-                <a href={link}>Get Qblox</a>
-              </Button>
-              <Button variant="outline" asChild className="">
-                <a href="#">Learn more</a>
-              </Button>
-            </div>
-          </div>
-          <div className="lg:col-span-3">
-            <iframe
-              className="aspect-video rounded-xl w-full"
-              src="https://www.youtube.com/embed/t_Us_D8lJIU?si=mNHGElRhjMoZmC7Sa&autoplay=1&loop=1&controls=0&rel=1&mute=1&loop=1&playlist=t_Us_D8lJIU"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            ></iframe>
-          </div>
+function HeroControls() {
+  return (
+    <div className="absolute inset-x-0 top-0 xl:top-5 z-20 flex justify-end p-4">
+      <div className="w-full max-w-7xl mx-auto flex justify-end">
+        <div className="flex items-center gap-2 rounded-full bg-black/40 px-2 py-1 backdrop-blur">
+          <Button
+            size="icon"
+            variant="ghost"
+            className="h-9 w-9 rounded-full text-white hover:bg-white/15"
+            asChild
+          >
+            <a href={youtube} aria-label="Toggle sound">
+              <Volume2 className="h-4 w-4" />
+            </a>
+          </Button>
+          <Button
+            size="icon"
+            variant="ghost"
+            className="h-9 w-9 rounded-full text-white hover:bg-white/15"
+            asChild
+          >
+            <a href={youtube} aria-label="Open on YouTube">
+              <ExternalLink className="h-4 w-4" />
+            </a>
+          </Button>
         </div>
       </div>
-    </section>
+    </div>
+  );
+}
+
+const HeroContent = ({ link }: { link: string }) => (
+  <div className="relative z-10 flex h-full items-center justify-center px-4 py-16">
+    <div className="flex flex-col items-center gap-6 text-center text-white">
+      <div className="flex flex-col items-center gap-3 sm:flex-row">
+        <Button asChild className="">
+          <a href="#intro">Explore Qblox</a>
+        </Button>
+        <Button
+          variant="outline"
+          asChild
+          className="border-white/60 bg-white/0  text-white hover:bg-white/10 hover:text-white"
+        >
+          <a href="#intro">Contact Us</a>
+        </Button>
+      </div>
+    </div>
+  </div>
+);
+
+export default function Hero() {
+  return (
+    <div className="xl:-mt-24 xl:z-50 ">
+      <section
+        id="hero-section"
+        className="relative isolate w-full aspect-video overflow-hidden"
+      >
+        <HeroVideo />
+        <HeroOverlay />
+        <div className="max-w-7xl mx-auto">
+          <HeroControls />
+        </div>
+
+        <div className="hidden sm:block h-full">
+          <HeroContent link="#intro" />
+        </div>
+      </section>
+    </div>
   );
 }
