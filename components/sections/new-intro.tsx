@@ -26,7 +26,7 @@ export default function NewIntro() {
     "https://www.amazon.com/QBLOX-Construction-Multi-Directional-Educational-Structures/dp/B0FLZ79GD4/ref=sr_1_2?crid=2C8HG2DDUXLTK&dib=eyJ2IjoiMSJ9.utt9lx44OGUJD1qA-xnY63I4ybCMQ8UD1IBs7wkzpM8.R-XyQs7VKFo8aNbdkNWjZxGHTFk8zpRdPxM8AFPXZco&dib_tag=se&keywords=qblox&qid=1765110496&sprefix=qblo%2Caps%2C244&sr=8-2&th=1";
 
   return (
-    <section className="py-24">
+    <section className="py-12 md:py-24">
       <div className="container mx-auto grid items-center gap-10 lg:grid-cols-2">
         <div className="flex flex-col items-center text-center lg:items-start lg:text-left px-4 gap-6">
           <h1 className="text-4xl font-semibold sm:text-6xl text-foreground/85 leading-tighter">

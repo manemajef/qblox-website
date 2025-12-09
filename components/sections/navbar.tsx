@@ -50,7 +50,7 @@ export default function Navbar() {
   const headerClass = cn(
     "sticky top-0 z-50 w-full backdrop-blur supports-backdrop-filter:bg-background/75 shadow-xl transition-colors",
     isOverHero
-      ? "xl:bg-black/25 xl:max-w-3/5 xl:mx-auto xl:mt-6 xl:rounded-xl"
+      ? "xl:bg-black/25 xl:max-w-3/5 xl:mx-auto xl:mt-4 xl:rounded-xl"
       : "bg-background/85",
   );
 
