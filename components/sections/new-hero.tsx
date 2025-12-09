@@ -72,7 +72,7 @@ const HeroContent = ({ link }: { link: string }) => (
 
 export default function Hero() {
   return (
-    <div className="xl:-mt-20">
+    <div className="">
       <section className="relative isolate w-full aspect-video overflow-hidden">
         <HeroVideo />
         <HeroOverlay />
