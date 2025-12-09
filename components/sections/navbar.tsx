@@ -28,6 +28,22 @@ const GetQbloxButton = ({ className }: { className?: string }) => (
   </Link>
 );
 
+const NavbarFloat = () => (
+  <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 hidden xl:block">
+    <nav className="flex items-center gap-6 text-sm font-medium bg-black/20 backdrop-blur-md px-8 py-3 rounded-full shadow-2xl shadow-black/50">
+      {links.map((link) => (
+        <Link
+          key={link.href}
+          href={link.href}
+          className="text-white hover:text-white hover:underline transition-all"
+        >
+          {link.label}
+        </Link>
+      ))}
+    </nav>
+  </div>
+);
+
 export default function Navbar() {
   const [isOverHero, setIsOverHero] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
@@ -52,98 +68,76 @@ export default function Navbar() {
     return () => observer.disconnect();
   }, []);
 
-  const headerClass = cn(
-    "sticky top-0 z-50 w-full backdrop-blur supports-backdrop-filter:bg-background/75 shadow-xl transition-colors",
-    isOverHero
-      ? "xl:bg-black/25 xl:max-w-3/5 xl:mx-auto xl:mt-4 xl:rounded-xl"
-      : "bg-background/85",
-  );
-
-  const linkClass = cn(
-    "transition hover:text-foreground",
-    isOverHero ? "xl:text-white xl:hover:underline text-foreground/80" : "text-foreground/80"
-  );
-
-  const getQbloxClass = cn(
-    "text-sm font-semibold transition hover:underline border rounded-md py-2 px-4",
-    isOverHero ? "xl:text-white bg-white/10 xl:hover:underline" : "text-primary hover:text-primary/80"
-  );
-
   return (
-    <header ref={headerRef} className={headerClass}>
-      <div className="container mx-auto flex items-center gap-6 py-4 px-4">
-        <Link
-          href="/"
-          className={cn(
-            isOverHero ? "xl:hidden" : "flex items-center gap-3 shrink-0",
-          )}
-          aria-label="Qblox home"
-        >
-          <Image
-            src="/logo.png"
-            alt="Qblox logo"
-            width={160}
-            height={48}
-            className="h-10 w-auto"
-            priority
-          />
-        </Link>
-        <Link
-          href="/"
-          className={cn(
-            isOverHero ? "hidden xl:flex items-center gap-3 shrink-0" : "hidden",
-          )}
-          aria-label="Qblox home"
-        >
-          <Image
-            src="/logo-white-bg.png"
-            alt="Qblox logo"
-            width={140}
-            height={48}
-            className="h-10 w-auto"
-            priority
-          />
-        </Link>
+    <>
+      {isOverHero && <NavbarFloat />}
+      <header
+        ref={headerRef}
+        className={cn(
+          "sticky top-0 z-50 w-full backdrop-blur supports-backdrop-filter:bg-background/75 shadow-xl transition-colors bg-background/85",
+          isOverHero && "xl:invisible"
+        )}
+      >
+        <div className="container mx-auto flex items-center gap-6 py-4 px-4">
+          <Link
+            href="/"
+            className="flex items-center gap-3 shrink-0"
+            aria-label="Qblox home"
+          >
+            <Image
+              src="/logo.png"
+              alt="Qblox logo"
+              width={160}
+              height={48}
+              className="h-10 w-auto"
+              priority
+            />
+          </Link>
 
-        <nav
-          aria-label="Primary"
-          className="hidden md:flex items-center gap-6 text-sm font-medium"
-        >
-          {links.map((link) => (
-            <Link key={link.href} href={link.href} className={linkClass}>
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+          <nav
+            aria-label="Primary"
+            className="hidden md:flex items-center gap-6 text-sm font-medium"
+          >
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-foreground/80 transition hover:text-foreground"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
 
-        <div className="ml-auto hidden md:block">
-          <GetQbloxButton className={getQbloxClass} />
-        </div>
-        <div className="ml-auto md:hidden">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="icon">
-                <Menu className="h-5 w-5" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="min-w-[200px]">
-              <DropdownMenuLabel className="font-semibold">
-                Menu
-              </DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              {links.map((link) => (
-                <DropdownMenuItem key={link.href} asChild>
-                  <Link href={link.href}>{link.label}</Link>
+          <div className="ml-auto hidden md:block">
+            <GetQbloxButton className="text-sm font-semibold transition hover:underline border rounded-md py-2 px-4 text-primary hover:text-primary/80" />
+          </div>
+          <div className="ml-auto md:hidden">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="icon">
+                  <Menu className="h-5 w-5" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="min-w-[200px]">
+                <DropdownMenuLabel className="font-semibold">
+                  Menu
+                </DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                {links.map((link) => (
+                  <DropdownMenuItem key={link.href} asChild>
+                    <Link href={link.href}>{link.label}</Link>
+                  </DropdownMenuItem>
+                ))}
+                <DropdownMenuSeparator />
+                <DropdownMenuItem asChild>
+                  <GetQbloxButton className="text-sm font-semibold transition hover:underline border rounded-md py-2 px-4 text-primary hover:text-primary/80" />
                 </DropdownMenuItem>
-              ))}
-              <DropdownMenuSeparator />
-              <DropdownMenuItem asChild>
-                <GetQbloxButton className={getQbloxClass} />
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </>
   );
 }
