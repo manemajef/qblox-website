@@ -1,6 +1,6 @@
 import features from "@/content/sections/features.json";
 import Image from "next/image";
-import { H1, Large } from "../ui/typography";
+import { H1, Large } from "@/components/ui/typography";
 
 interface FeatureType {
   title: string;
