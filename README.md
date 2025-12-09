@@ -5,9 +5,9 @@
 - Tech: `NextJS`, `ShadCN`, `TailwindCss`
 
 ### TODOS
-- [ ] Fix Models text 
+- [x] Fix Models text 
 - [ ] Fix Links 
-- [ ] Fix Navbar 
+- [x] Fix Navbar 
 - [ ] Make video embed at right length
 - [ ] unfiy layout:
   - [ ] Make `<Hading>` component
