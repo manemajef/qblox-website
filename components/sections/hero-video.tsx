@@ -5,7 +5,7 @@ import { Button } from "../ui/button";
 import { ExternalLink, Volume2, VolumeX } from "lucide-react";
 import { YOUTUBE_URL, YOUTUBE_EMBED_URL } from "@/lib/constants";
 
-function Video({ videoRef }: { videoRef: React.RefObject<HTMLIFrameElement> }) {
+function Video({ videoRef }: { videoRef: React.RefObject<HTMLIFrameElement | null> }) {
   // Extract video ID for the loop playlist parameter
   const videoId = YOUTUBE_EMBED_URL.split("/").pop()?.split("?")[0];
   const separator = YOUTUBE_EMBED_URL.includes("?") ? "&" : "?";
