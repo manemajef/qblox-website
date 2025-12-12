@@ -6,15 +6,15 @@
 
 ### TODOS
 - [x] Fix Models text 
-- [ ] Fix Links 
+- [x] Fix Links 
 - [x] Fix Navbar 
 - [ ] Make video embed at right length
 - [ ] unfiy layout:
   - [ ] Make `<Hading>` component
   - [ ] Make `<Section>` component
 - [ ] Make transitions work 
-- [ ] Animate 
-- [ ] Fix mute button 
+- [x] Animate 
+- [x] Fix mute button 
 - [ ] Contact us page + contact api
 - [ ] Make additonal Pages:
   - [ ] About us 
