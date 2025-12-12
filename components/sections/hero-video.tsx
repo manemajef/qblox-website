@@ -11,7 +11,7 @@ function Video({ videoRef }: { videoRef: React.RefObject<HTMLIFrameElement | nul
   const separator = YOUTUBE_EMBED_URL.includes("?") ? "&" : "?";
   // enablejsapi=1 is required to control the player via postMessage
   // scale-[1.35] and pointer-events-none hide the YouTube UI
-  const embedSrc = `${YOUTUBE_EMBED_URL}${separator}autoplay=1&mute=1&controls=0&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=${videoId}&enablejsapi=1`;
+  const embedSrc = `${YOUTUBE_EMBED_URL}${separator}autoplay=1&mute=1&controls=0&start=6&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=${videoId}&enablejsapi=1`;
 
   return (
     <div className="absolute inset-0 pointer-events-none">
@@ -27,8 +27,7 @@ function Video({ videoRef }: { videoRef: React.RefObject<HTMLIFrameElement | nul
   );
 }
 
-function HeroControls({ isMuted, toggleMute }: { isMuted: boolean; toggleMute: () => void })
- {
+function HeroControls({ isMuted, toggleMute }: { isMuted: boolean; toggleMute: () => void }) {
   return (
     <div className="absolute inset-x-0 top-0 xl:top-5 z-20 flex justify-end p-4">
       <div className="w-full max-w-7xl mx-auto flex justify-end">
