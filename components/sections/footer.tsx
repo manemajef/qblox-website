@@ -51,9 +51,21 @@ export default function Footer() {
 
         <div className="flex flex-col gap-2 border-t pt-6 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between">
           <Small className="text-muted-foreground">{footer.tagline}</Small>
-          <Small className="text-muted-foreground">
-            {footer.copyright}
-          </Small>
+          <div className="flex flex-col md:flex-row gap-1 md:gap-4 md:items-center">
+            <Small className="text-muted-foreground">{footer.copyright}</Small>
+            <span className="hidden md:inline text-muted-foreground/30">|</span>
+            <Small className="text-muted-foreground">
+              Made by{" "}
+              <a
+                href="https://github.com/manemajef"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-foreground underline underline-offset-2 transition-colors"
+              >
+                RotemDavids
+              </a>
+            </Small>
+          </div>
         </div>
       </div>
     </footer>

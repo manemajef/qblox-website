@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
+import { usePathname } from "next/navigation";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -31,13 +32,13 @@ const GetQbloxButton = ({ className }: { className?: string }) => (
 const NavbarFloat = ({ isVisible }: { isVisible: boolean }) => (
   <div
     className={cn(
-      "fixed top-2 left-1/2 -translate-x-1/2 z-50 hidden xl:block transition-all duration-300",
+      "fixed top-6 left-1/2 -translate-x-1/2 z-[100] hidden xl:block transition-all duration-300",
       isVisible
         ? "opacity-100 scale-100"
         : "opacity-0 scale-95 pointer-events-none",
     )}
   >
-    <nav className="flex items-center gap-6 text-sm font-semibold bg-black/20 backdrop-blur-md px-8 py-3 rounded-full shadow-2xl shadow-black/50">
+    <nav className="flex items-center gap-6 text-sm font-semibold bg-black/40 backdrop-blur-xl px-8 py-3 rounded-full shadow-2xl shadow-black/50">
       <div className="flex items-center gap-6">
         {links.map((link) => (
           <Link
@@ -63,26 +64,39 @@ const NavbarFloat = ({ isVisible }: { isVisible: boolean }) => (
 export default function Navbar() {
   const [isOverHero, setIsOverHero] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
-    const heroSection = document.getElementById("hero-section");
-    if (!heroSection || !headerRef.current) return;
+    const initObserver = () => {
+      const heroSection = document.getElementById("hero-section");
+      if (!heroSection || !headerRef.current) return null;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsOverHero(entry.isIntersecting);
-      },
-      {
-        root: null,
-        threshold: 0,
-        rootMargin: "-80% 0px 0px 0px",
-      },
-    );
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          setIsOverHero(entry.isIntersecting);
+        },
+        {
+          root: null,
+          threshold: 0,
+          rootMargin: "-80% 0px 0px 0px",
+        },
+      );
 
-    observer.observe(heroSection);
+      observer.observe(heroSection);
+      return observer;
+    };
 
-    return () => observer.disconnect();
-  }, []);
+    let observer = initObserver();
+    // Retry briefly to handle hydration timing or server component streaming
+    const timer = setTimeout(() => {
+      if (!observer) observer = initObserver();
+    }, 100);
+
+    return () => {
+      observer?.disconnect();
+      clearTimeout(timer);
+    };
+  }, [pathname]);
 
   return (
     <>
@@ -90,7 +104,7 @@ export default function Navbar() {
       <header
         ref={headerRef}
         className={cn(
-          "sticky top-0 z-50 w-full backdrop-blur supports-backdrop-filter:bg-background/75 shadow-xl transition-all duration-500 bg-background/85",
+          "sticky top-0 z-[100] w-full backdrop-blur supports-backdrop-filter:bg-background/75 shadow-xl transition-all duration-500 bg-background/85",
           isOverHero && "xl:opacity-0 xl:pointer-events-none",
         )}
       >
@@ -135,7 +149,7 @@ export default function Navbar() {
                   <Menu className="h-5 w-5" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="min-w-[200px]">
+              <DropdownMenuContent className="min-w-[200px] z-[101]">
                 <DropdownMenuLabel className="font-semibold">
                   Menu
                 </DropdownMenuLabel>
