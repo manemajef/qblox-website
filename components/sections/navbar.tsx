@@ -104,11 +104,11 @@ export default function Navbar() {
       <header
         ref={headerRef}
         className={cn(
-          "sticky top-0 z-[100] w-full backdrop-blur supports-backdrop-filter:bg-background/75 shadow-xl transition-all duration-500 bg-background/85",
+          "sticky top-0 z-[100] w-full backdrop-blur supports-backdrop-filter:bg-background/75 shadow-sm transition-all duration-500 bg-background/85",
           isOverHero && "xl:opacity-0 xl:pointer-events-none",
         )}
       >
-        <div className="container mx-auto flex items-center gap-6 py-4 px-4">
+        <div className="container mx-auto flex items-center gap-6 py-3 px-4">
           <Link
             href="/"
             className="flex items-center gap-3 shrink-0"

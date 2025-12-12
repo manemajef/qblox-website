@@ -24,13 +24,14 @@ const HeroContent = () => (
 
 export default function Hero() {
   return (
-    <div className="xl:-mt-18 xl:z-50 ">
+    <div className="xl:-mt-18 xl:z-50">
       <section
         id="hero-section"
         className="relative isolate w-full aspect-video overflow-hidden"
       >
         <HeroVideo />
         <HeroOverlay />
+       
 
         <div className="hidden sm:block h-full">
           <HeroContent />
