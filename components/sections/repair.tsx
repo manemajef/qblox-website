@@ -1,6 +1,7 @@
 import repair from "@/content/sections/repair.json";
 import { Button } from "../ui/button";
 import { ShieldCheck, CheckCircle2, ArrowRight } from "lucide-react";
+import { YOUTUBE_REPAIR_SHORT } from "@/lib/constants";
 
 export default function Repair() {
   return (
@@ -26,7 +27,9 @@ export default function Repair() {
               className="group"
               asChild
             >
-              <a href="#guide">
+              <a href={YOUTUBE_REPAIR_SHORT} target="_blank"
+                rel="noopener noreferrer"
+              >
                 See the guide
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>

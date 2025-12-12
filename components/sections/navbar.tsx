@@ -24,7 +24,7 @@ const links = [
 ];
 
 const GetQbloxButton = ({ className }: { className?: string }) => (
-  <Link href={AMAZON_PRODUCT_URL} className={className}>
+  <Link href={AMAZON_PRODUCT_URL} target="_blank" rel = "noopener noreferrer" className={className}>
     Get Qblox
   </Link>
 );
@@ -139,10 +139,15 @@ export default function Navbar() {
             ))}
           </nav>
 
-          <div className="ml-auto hidden md:block">
+          {/* <div className="ml-auto hidden md:block">
+            <GetQbloxButton className="text-sm font-semibold transition hover:underline border border-primary/50 rounded-md py-2 px-4 text-primary hover:text-primary/80" />
+          </div> */}
+          <div className="ml-auto flex items-center gap-4 ">
+            
+          <div className="ml-auto ">
             <GetQbloxButton className="text-sm font-semibold transition hover:underline border border-primary/50 rounded-md py-2 px-4 text-primary hover:text-primary/80" />
           </div>
-          <div className="ml-auto md:hidden">
+          <div className="md:hidden">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="icon">
@@ -165,6 +170,7 @@ export default function Navbar() {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
+            </div>
           </div>
         </div>
       </header>

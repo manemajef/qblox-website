@@ -14,7 +14,9 @@ const QbloxWordmark = ({ className }: { className?: string }) => (
 const HeroButtons = ({ link }: { link: string }) => (
   <div className="flex w-full justify-center gap-3 sm:flex-row lg:justify-start">
     <Button asChild>
-      <a href={link}>Get Qblox</a>
+      <a href={link} target="_blank"
+        rel="noopener noreferrer"
+      >Get Qblox</a>
     </Button>
     <Button variant="outline" asChild>
       <a href="#guide">Learn more</a>

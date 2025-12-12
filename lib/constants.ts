@@ -4,3 +4,4 @@ export const AMAZON_PRODUCT_URL =
 export const YOUTUBE_VIDEO_ID = "t_Us_D8lJIU";
 export const YOUTUBE_URL = `https://www.youtube.com/watch?v=${YOUTUBE_VIDEO_ID}`;
 export const YOUTUBE_EMBED_URL = `https://www.youtube.com/embed/${YOUTUBE_VIDEO_ID}?autoplay=1&controls=0&rel=1&mute=1&loop=1&playlist=${YOUTUBE_VIDEO_ID}&iv_load_policy=3&start=6&end=53`;
+export const YOUTUBE_REPAIR_SHORT="https://youtube.com/shorts/O5sjpPgf4Yg?feature=share";
