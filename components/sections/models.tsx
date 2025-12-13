@@ -1,5 +1,6 @@
 import models from "@/content/sections/models.json";
 import Image from "next/image";
+import { H2, H3, Muted } from "../prose";
 
 interface Model {
   id: string;
@@ -15,9 +16,10 @@ export default function Models() {
     <section className="py-4 px-4">
       <div className="container mx-auto">
         <div className="mb-8 max-w-lg text-center mx-auto">
-          <h2 className="mb-3 pb-8 text-4xl font-semibold md:mb-4 md:text-4xl lg:mb-6">
-            {title}
-          </h2>
+          {/* <h2 className="mb-3 pb-8 text-4xl font-semibold md:mb-4 md:text-4xl lg:mb-6"> */}
+          {/*   {title} */}
+          {/* </h2> */}
+          <H2>{title}</H2>
         </div>
         <div className="max-w-7xl mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {modelsList.map((m: Model) => (
@@ -38,12 +40,15 @@ export default function Models() {
               </div>
 
               <div className="px-6 py-8 md:px-8 md:py-10 lg:px-10 lg:py-12">
-                <h3 className="mb-3 text-lg font-semibold md:mb-4 md:text-2xl lg:mb-6">
-                  {m.heading}
-                </h3>
-                <p className="text-muted-foreground lg:text-lg">
-                  {m.description}
-                </p>
+                {/* <h3 className="mb-3 text-lg font-semibold md:mb-4 md:text-2xl lg:mb-6"> */}
+                {/*   {m.heading} */}
+                {/* </h3> */}
+                <H3>{m.heading}</H3>
+                <Muted>{m.description}</Muted>
+
+                {/* <p className="text-muted-foreground lg:text-lg"> */}
+                {/*   {m.description} */}
+                {/* </p> */}
               </div>
             </div>
           ))}

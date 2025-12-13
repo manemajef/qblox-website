@@ -2,6 +2,7 @@ import repair from "@/content/sections/repair.json";
 import { Button } from "../ui/button";
 import { ShieldCheck, CheckCircle2, ArrowRight } from "lucide-react";
 import { YOUTUBE_REPAIR_SHORT } from "@/lib/constants";
+import { H2, H3, Muted } from "../prose";
 
 export default function Repair() {
   return (
@@ -10,24 +11,24 @@ export default function Repair() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full bg-orange-100 px-4 py-1.5 text-sm font-medium text-orange-700 border border-orange-200 mb-8">
+            <div className="inline-flex items-center gap-2 rounded-full bg-orange-100 px-4 py-1.5 text-sm font-medium text-orange-700 border border-orange-200 mb-0">
               <ShieldCheck className="h-4 w-4" />
               Repair & Safety
             </div>
+            <H3>{repair.title}</H3>
+            {/* <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight text-foreground"> */}
+            {/*   {repair.title} */}
+            {/* </h2> */}
+            {/* <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl"> */}
+            <Muted>{repair.content}</Muted>
+            {/*   {repair.content} */}
+            {/* </p> */}
+            <br />
 
-            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight text-foreground">
-              {repair.title}
-            </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-xl">
-              {repair.content}
-            </p>
-
-            <Button
-              size="lg"
-              className="group"
-              asChild
-            >
-              <a href={YOUTUBE_REPAIR_SHORT} target="_blank"
+            <Button size="lg" className="group" asChild>
+              <a
+                href={YOUTUBE_REPAIR_SHORT}
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 See the guide

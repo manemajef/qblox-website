@@ -43,7 +43,7 @@ export function H2({ className = "", children }: PropsType) {
     <h1
       className={cn(
         className,
-        "text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight tracking-tight"
+        "text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight tracking-tight mb-12"
       )}
     >
       {children}
@@ -55,7 +55,7 @@ export function H3({ className = "", children }: PropsType) {
   return (
     <h3
       className={cn(
-        "text-3xl sm:text-4xl font-semibold leading-tight tracking-tight text-foreground/85 mt-8 mb-4",
+        "text-3xl md:text-4xl font-semibold leading-tight tracking-tight text-foreground/85 mt-8 mb-4",
         className
       )}
     >
@@ -121,6 +121,13 @@ export function Strong({ className = "", children }: PropsType) {
     <strong className={cn("font-bold text-foreground", className)}>
       {children}
     </strong>
+  );
+}
+export function Muted({ className = "", children }: PropsType) {
+  return (
+    <p className={cn("text-muted-foreground  sm:text-lg", className)}>
+      {children}
+    </p>
   );
 }
 

@@ -3,6 +3,7 @@ import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { AMAZON_PRODUCT_URL } from "@/lib/constants";
+import { H1, Muted } from "../prose";
 
 const QbloxWordmark = ({ className }: { className?: string }) => (
   <span className={cn("text-sky-800", className)}>
@@ -14,9 +15,9 @@ const QbloxWordmark = ({ className }: { className?: string }) => (
 const HeroButtons = ({ link }: { link: string }) => (
   <div className="flex w-full justify-center gap-3 sm:flex-row lg:justify-start">
     <Button asChild>
-      <a href={link} target="_blank"
-        rel="noopener noreferrer"
-      >Get Qblox</a>
+      <a href={link} target="_blank" rel="noopener noreferrer">
+        Get Qblox
+      </a>
     </Button>
     <Button variant="outline" asChild>
       <a href="#guide">Learn more</a>
@@ -25,7 +26,6 @@ const HeroButtons = ({ link }: { link: string }) => (
 );
 
 export default function Intro() {
-
   return (
     <section className="py-12 md:py-24">
       <div className="container mx-auto grid items-center gap-10 lg:grid-cols-2">
@@ -38,7 +38,8 @@ export default function Intro() {
           </h2>
           <div className="text-muted-foreground text-lg max-w-xl space-y-3">
             {hero.content.map((c, i) => (
-              <p key={i}>{c}</p>
+              // <p key={i}>{c}</p>
+              <Muted key={i}>{c}</Muted>
             ))}
           </div>
           <HeroButtons link={AMAZON_PRODUCT_URL} />
