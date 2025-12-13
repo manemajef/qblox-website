@@ -37,12 +37,8 @@ export function Form() {
   const [content, setContent] = useState("");
   return (
     <Card className="max-w-lg mx-auto mt-12">
-      <CardHeader>
-        leave us a message
-      </CardHeader>
+      <CardHeader>leave us a message</CardHeader>
       <CardContent>
-
-
         <FieldSet>
           <FieldGroup className="">
             <div className="sm:flex gap-4">
@@ -76,14 +72,11 @@ export function Form() {
               <FieldLabel>Content</FieldLabel>
               <Textarea placeholder="write youre content here.." />
             </Field>
-
           </FieldGroup>
           <Field orientation="horizontal" className="flex justify-between">
             <FieldDescription>Well get back to you soon</FieldDescription>
             <Button>Submit</Button>
-
           </Field>
-
         </FieldSet>
       </CardContent>
     </Card>
