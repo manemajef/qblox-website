@@ -1,5 +1,6 @@
 import { Button } from "../ui/button";
 import { HeroVideo } from "./hero-video";
+import { ContactUs } from "../blocks/form";
 
 const HeroOverlay = () => <div className="absolute inset-0 bg-black/35" />;
 
@@ -10,13 +11,13 @@ const HeroContent = () => (
         <Button asChild>
           <a href="#intro">Explore Qblox</a>
         </Button>
-        <Button
-          variant="outline"
-          asChild
-          className="border-white/60 bg-white/0 text-white hover:bg-white/10 hover:text-white"
+        <ContactUs
+          // variant="outline"
+
+          className=" border cursor-pointer border-white/60 bg-white/0 text-white hover:bg-white/10 hover:text-white"
         >
-          <a href="mailto:support@qblox.co.il">Contatc Us</a>
-        </Button>
+          {/* <a href="mailto:support@qblox.co.il">Contatc Us</a> */}
+        </ContactUs>
       </div>
     </div>
   </div>

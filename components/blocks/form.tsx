@@ -1,31 +1,34 @@
 "use client";
 import {
   Field,
-  FieldContent,
   FieldDescription,
-  FieldError,
   FieldGroup,
   FieldLabel,
-  FieldLegend,
   FieldSeparator,
   FieldSet,
-  FieldTitle,
 } from "@/components/ui/field";
 import { Input } from "../ui/input";
-
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "../ui/dialog";
 import { Card, CardContent, CardHeader } from "../ui/card";
 import {
   Select,
   SelectContent,
-  SelectGroup,
   SelectTrigger,
-  SelectLabel,
   SelectValue,
   SelectItem,
 } from "../ui/select";
 import { useState } from "react";
 import { Textarea } from "../ui/textarea";
 import { Button } from "../ui/button";
+import { H4, Link, Small, Strong } from "../prose";
+import { cn } from "@/lib/utils";
 
 const subjects = ["general", "delivery", "repair"];
 type SubjectType = "general" | "delivery" | "repair";
@@ -36,12 +39,11 @@ export function Form() {
   const [email, setEmail] = useState("");
   const [content, setContent] = useState("");
   return (
-    <Card className="max-w-lg mx-auto mt-12">
-      <CardHeader>leave us a message</CardHeader>
+    <Card className="max-w-lg mx-auto mt-12 w-full">
       <CardContent>
         <FieldSet>
           <FieldGroup className="">
-            <div className="sm:flex gap-4">
+            <div className="sm:flex gap-4 space-y-4">
               <Field>
                 <FieldLabel htmlFor="name">Email</FieldLabel>
                 <Input
@@ -68,17 +70,37 @@ export function Form() {
                 </Select>
               </Field>
             </div>
+            <FieldSeparator />
             <Field>
-              <FieldLabel>Content</FieldLabel>
+              <FieldLabel>Write Youre message here</FieldLabel>
               <Textarea placeholder="write youre content here.." />
             </Field>
           </FieldGroup>
           <Field orientation="horizontal" className="flex justify-between">
-            <FieldDescription>Well get back to you soon</FieldDescription>
+            <FieldDescription>
+              <Small className="text-primary underline underline-offset-4">
+                <a href="mailto:support@qblox.co.il">Mail Us Instead</a>
+              </Small>
+            </FieldDescription>
             <Button>Submit</Button>
           </Field>
         </FieldSet>
       </CardContent>
     </Card>
+  );
+}
+export function ContactUs({ className }: { className?: string }) {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button className={cn(className, "")}>Contact Us</Button>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle className="">Leave us a Message</DialogTitle>
+        </DialogHeader>
+        <Form />
+      </DialogContent>
+    </Dialog>
   );
 }
