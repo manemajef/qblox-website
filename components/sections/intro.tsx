@@ -30,7 +30,7 @@ export default function Intro() {
     <section className="py-12 md:py-24">
       <div className="container mx-auto grid items-center gap-10 lg:grid-cols-2">
         <div className="flex flex-col items-center text-center lg:items-start lg:text-left px-4 gap-6">
-          <h1 className="text-4xl font-semibold sm:text-6xl text-foreground/85 leading-tighter">
+          <h1 className="text-4xl font-semibold sm:text-6xl text-foreground/85 leading-tighter font-saira">
             <QbloxWordmark className="text-7xl sm:text-8xl" />
           </h1>
           <h2 className="tracking-tighter text-xl sm:text-2xl font-saira text-sky-800 leading-tight font-medium">
