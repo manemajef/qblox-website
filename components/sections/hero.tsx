@@ -15,7 +15,7 @@ const HeroContent = () => (
           asChild
           className="border-white/60 bg-white/0 text-white hover:bg-white/10 hover:text-white"
         >
-          <a href="#pricing">Get Started</a>
+          <a href="mailto:support@qblox.co.il">Contatc Us</a>
         </Button>
       </div>
     </div>

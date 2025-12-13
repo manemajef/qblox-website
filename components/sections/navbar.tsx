@@ -19,12 +19,12 @@ import { AMAZON_PRODUCT_URL } from "@/lib/constants";
 const links = [
   { label: "Getting Started", href: "/v2" },
   { label: "Start Building", href: "#models" },
-  { label: "Q&A", href: "#qa" },
+  { label: "Q&A", href: "#faq" },
   { label: "Pricing", href: "#pricing" },
 ];
 
 const GetQbloxButton = ({ className }: { className?: string }) => (
-  <Link href={AMAZON_PRODUCT_URL} target="_blank" rel = "noopener noreferrer" className={className}>
+  <Link href={AMAZON_PRODUCT_URL} target="_blank" rel="noopener noreferrer" className={className}>
     Get Qblox
   </Link>
 );
@@ -143,33 +143,33 @@ export default function Navbar() {
             <GetQbloxButton className="text-sm font-semibold transition hover:underline border border-primary/50 rounded-md py-2 px-4 text-primary hover:text-primary/80" />
           </div> */}
           <div className="ml-auto flex items-center gap-4 ">
-            
-          <div className="ml-auto ">
-            <GetQbloxButton className="text-sm font-semibold transition hover:underline border border-primary/50 rounded-md py-2 px-4 text-primary hover:text-primary/80" />
-          </div>
-          <div className="md:hidden">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="icon">
-                  <Menu className="h-5 w-5" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="min-w-[200px] z-[101]">
-                <DropdownMenuLabel className="font-semibold">
-                  Menu
-                </DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                {links.map((link) => (
-                  <DropdownMenuItem key={link.href} asChild>
-                    <Link href={link.href}>{link.label}</Link>
+
+            <div className="ml-auto ">
+              <GetQbloxButton className="text-sm font-semibold transition hover:underline border border-primary/50 rounded-md py-2 px-4 text-primary hover:text-primary/80" />
+            </div>
+            <div className="md:hidden">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" size="icon">
+                    <Menu className="h-5 w-5" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="min-w-[200px] z-[101]">
+                  <DropdownMenuLabel className="font-semibold">
+                    Menu
+                  </DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  {links.map((link) => (
+                    <DropdownMenuItem key={link.href} asChild>
+                      <Link href={link.href}>{link.label}</Link>
+                    </DropdownMenuItem>
+                  ))}
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem asChild>
+                    <GetQbloxButton className="text-sm font-semibold transition hover:underline border rounded-md py-2 px-4 text-primary hover:text-primary/80" />
                   </DropdownMenuItem>
-                ))}
-                <DropdownMenuSeparator />
-                <DropdownMenuItem asChild>
-                  <GetQbloxButton className="text-sm font-semibold transition hover:underline border rounded-md py-2 px-4 text-primary hover:text-primary/80" />
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
           </div>
         </div>
