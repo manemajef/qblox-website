@@ -11,7 +11,6 @@ interface Model {
 
 export default function Models() {
   const { title, models: modelsList } = models;
-
   return (
     <section className="py-4 px-4">
       <div className="container mx-auto">
