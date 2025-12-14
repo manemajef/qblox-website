@@ -56,9 +56,12 @@ export function Form() {
               </Field>
               <Field>
                 <FieldLabel htmlFor="username">Subject</FieldLabel>
-                <Select>
+                <Select
+                  value={subject}
+                  onValueChange={(value) => setSubject(value as SubjectType)}
+                >
                   <SelectTrigger>
-                    <SelectValue placeholder={subject} value={subject} />
+                    <SelectValue placeholder="Select a subject" />
                   </SelectTrigger>
                   <SelectContent>
                     {subjects.map((s) => (
