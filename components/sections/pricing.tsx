@@ -3,7 +3,7 @@ import Image from "next/image";
 import cta from "@/content/sections/cta.json";
 import { Button } from "../ui/button";
 import { Lead } from "../ui/typography";
-import { H3, Li, Muted, Ul } from "../prose";
+import { H3, H4, Li, Muted, Ul } from "../prose";
 import { Card, CardContent, CardHeader } from "../ui/card";
 
 type SetType = (typeof cta.sets)[number];
@@ -54,26 +54,71 @@ const Set = ({ set }: { set: SetType }) => {
   return (
     <Card>
       <CardHeader>
-        <H3>{set.title}</H3>
+        <H4>{set.title}</H4>
       </CardHeader>
-      <CardContent className="grid gap-8 sm:grid-cols-2">
-        <div className="border flex flex-col justify-center">
-          <Muted>{set.description}</Muted>
-          <Button className="mt-2 flex-none" size="lg">
-            {set.button}
-          </Button>
-        </div>
-        <div className="space-y-3">
-          <div className="relative aspect-square overflow-hidden rounded-xl border">
-            <Image
-              src={set.img}
-              alt={set.title}
-              fill
-              className="object-cover"
-            />
+      <CardContent>
+        <div className="grid sm:grid-cols-5 lg:grid-cols-1">
+          <div className="space-y-3 sm:col-span-3">
+            <div className="relative aspect-square overflow-hidden rounded-xl border">
+              <Image
+                src={set.img}
+                alt={set.title}
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+          <div className="p-4 sm:col-span-2 flex flex-col justify-center">
+            <Muted>{set.description}</Muted>
+            {/* <Ul className="hidden sm:block lg:hidden mt-8"> */}
+            {/*   {set.features.map((f) => ( */}
+            {/*     <Li key={f} className="text-muted-foreground text-lg"> */}
+            {/*       <span className="text-lg">{f}</span> */}
+            {/*     </Li> */}
+            {/*   ))} */}
+            {/* </Ul> */}
+            <br />
+            {/* <div className="flex sm:flex-col lg:flex-row gap-8 justify-between items-center w-full"> */}
+            {/*   <Ul> */}
+            {/*     {set.features.map((f) => ( */}
+            {/*       <Li key={f}> */}
+            {/*         <span className="text-muted-foreground text-lg">{f}</span> */}
+            {/*       </Li> */}
+            {/*     ))} */}
+            {/*   </Ul> */}
+            {/*   <Button>{set.button}</Button> */}
+            {/* </div> */}
           </div>
         </div>
+        <div className="flex  lg:flex-row gap-8 justify-between items-center w-full mt-4">
+          <Ul>
+            {set.features.map((f) => (
+              <Li key={f}>
+                <span className="text-muted-foreground text-lg">{f}</span>
+              </Li>
+            ))}
+          </Ul>
+          <Button>{set.button}</Button>
+        </div>
       </CardContent>
+      {/* <CardContent className="grid gap-8 sm:grid-cols-2"> */}
+      {/*   <div className="border flex flex-col justify-center"> */}
+      {/*     <Muted>{set.description}</Muted> */}
+      {/*     <Button className="mt-2 flex-none" size="lg"> */}
+      {/*       {set.button} */}
+      {/*     </Button> */}
+      {/*   </div> */}
+      {/*   <div className="space-y-3"> */}
+      {/*     <div className="relative aspect-square overflow-hidden rounded-xl border"> */}
+      {/*       <Image */}
+      {/*         src={set.img} */}
+      {/*         alt={set.title} */}
+      {/*         fill */}
+      {/*         className="object-cover" */}
+      {/*       /> */}
+      {/*     </div> */}
+      {/*   </div> */}
+      {/* </CardContent> */}
     </Card>
   );
 };
@@ -86,10 +131,10 @@ export default function Pricing() {
           <Lead className="text-lg text-muted-foreground">{cta.subtitle}</Lead>
         </div>
 
-        <div className="space-y-10">
-          <div className="grid gap-6 xl:grid-cols-2">
+        <div className="space-y-10 mt-10">
+          <div className="grid gap-6 lg:grid-cols-2">
             {cta.sets.map((set) => (
-              <SetCard key={set.id} set={set} />
+              <Set key={set.id} set={set} />
             ))}
           </div>
         </div>

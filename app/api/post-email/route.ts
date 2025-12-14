@@ -11,7 +11,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 const RECIPIENTS = [process.env.EMAIL_AD1].filter(Boolean) as string[];
 
-interface PostEmailData {
+export interface PostEmailData {
   from: string;
   subject: string;
   content: string;

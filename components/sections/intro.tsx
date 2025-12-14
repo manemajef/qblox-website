@@ -20,7 +20,7 @@ const HeroButtons = ({ link }: { link: string }) => (
       </a>
     </Button>
     <Button variant="outline" asChild>
-      <a href="#guide">Learn more</a>
+      <a href="/support">Learn more</a>
     </Button>
   </div>
 );

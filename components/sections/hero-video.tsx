@@ -5,13 +5,18 @@ import { Button } from "../ui/button";
 import { ExternalLink, Volume2, VolumeX } from "lucide-react";
 import { YOUTUBE_URL, YOUTUBE_EMBED_URL } from "@/lib/constants";
 
-function Video({ videoRef }: { videoRef: React.RefObject<HTMLIFrameElement | null> }) {
+function Video({
+  videoRef,
+}: {
+  videoRef: React.RefObject<HTMLIFrameElement | null>;
+}) {
   // Extract video ID for the loop playlist parameter
   const videoId = YOUTUBE_EMBED_URL.split("/").pop()?.split("?")[0];
   const separator = YOUTUBE_EMBED_URL.includes("?") ? "&" : "?";
   // enablejsapi=1 is required to control the player via postMessage
   // scale-[1.35] and pointer-events-none hide the YouTube UI
-  const embedSrc = `${YOUTUBE_EMBED_URL}${separator}autoplay=1&mute=1&controls=0&start=6&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=${videoId}&enablejsapi=1`;
+  // const embedSrc = `${YOUTUBE_EMBED_URL}${separator}autoplay=1&mute=1&controls=0&start=6&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=${videoId}&enablejsapi=1`;
+  const embedSrc = `${YOUTUBE_EMBED_URL}${separator}autoplay=1&mute=1&controls=0&start=6&end=39&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=${videoId}&enablejsapi=1`;
 
   return (
     <div className="absolute inset-0 pointer-events-none">
@@ -27,7 +32,13 @@ function Video({ videoRef }: { videoRef: React.RefObject<HTMLIFrameElement | nul
   );
 }
 
-function HeroControls({ isMuted, toggleMute }: { isMuted: boolean; toggleMute: () => void }) {
+function HeroControls({
+  isMuted,
+  toggleMute,
+}: {
+  isMuted: boolean;
+  toggleMute: () => void;
+}) {
   return (
     <div className="absolute inset-x-0 top-0 xl:top-5 z-20 flex justify-end p-4">
       <div className="w-full max-w-7xl mx-auto flex justify-end">
@@ -39,7 +50,11 @@ function HeroControls({ isMuted, toggleMute }: { isMuted: boolean; toggleMute: (
             onClick={toggleMute}
             aria-label={isMuted ? "Unmute video" : "Mute video"}
           >
-            {isMuted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
+            {isMuted ? (
+              <VolumeX className="h-4 w-4" />
+            ) : (
+              <Volume2 className="h-4 w-4" />
+            )}
           </Button>
           <Button
             size="icon"
@@ -47,7 +62,12 @@ function HeroControls({ isMuted, toggleMute }: { isMuted: boolean; toggleMute: (
             className="h-9 w-9 rounded-full text-white hover:bg-white/15"
             asChild
           >
-            <a href={YOUTUBE_URL} aria-label="Open on YouTube">
+            <a
+              href={YOUTUBE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open on YouTube"
+            >
               <ExternalLink className="h-4 w-4" />
             </a>
           </Button>
