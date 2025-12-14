@@ -74,7 +74,11 @@ export function FormDialog({
           <AlertDialogCancel onClick={() => onOpenChange(false)}>
             Cancel
           </AlertDialogCancel>
-          <AlertDialogAction onClick={() => onOpenChange(false)}>
+          <AlertDialogAction
+            onClick={() => {
+              onOpenChange(false);
+            }}
+          >
             {fail ? "Retry" : "Continue"}
           </AlertDialogAction>
         </AlertDialogFooter>
