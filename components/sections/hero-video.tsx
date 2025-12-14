@@ -15,8 +15,8 @@ function Video({
   const separator = YOUTUBE_EMBED_URL.includes("?") ? "&" : "?";
   // enablejsapi=1 is required to control the player via postMessage
   // scale-[1.35] and pointer-events-none hide the YouTube UI
-  // const embedSrc = `${YOUTUBE_EMBED_URL}${separator}autoplay=1&mute=1&controls=0&start=6&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=${videoId}&enablejsapi=1`;
-  const embedSrc = `${YOUTUBE_EMBED_URL}${separator}autoplay=1&mute=1&controls=0&start=6&end=39&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=${videoId}&enablejsapi=1`;
+  const embedSrc = `${YOUTUBE_EMBED_URL}${separator}autoplay=1&mute=1&controls=0&start=6&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=${videoId}&enablejsapi=1`;
+  // const embedSrc = `${YOUTUBE_EMBED_URL}${separator}autoplay=1&mute=1&controls=0&start=6&end=39&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=${videoId}&enablejsapi=1`;
 
   return (
     <div className="absolute inset-0 pointer-events-none">
