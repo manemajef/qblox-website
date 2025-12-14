@@ -24,7 +24,12 @@ const links = [
 ];
 
 const GetQbloxButton = ({ className }: { className?: string }) => (
-  <Link href={AMAZON_PRODUCT_URL} target="_blank" rel="noopener noreferrer" className={className}>
+  <Link
+    href={AMAZON_PRODUCT_URL}
+    target="_blank"
+    rel="noopener noreferrer"
+    className={className}
+  >
     Get Qblox
   </Link>
 );
@@ -35,7 +40,7 @@ const NavbarFloat = ({ isVisible }: { isVisible: boolean }) => (
       "fixed top-6 left-1/2 -translate-x-1/2 z-[100] hidden xl:block transition-all duration-300",
       isVisible
         ? "opacity-100 scale-100"
-        : "opacity-0 scale-95 pointer-events-none",
+        : "opacity-0 scale-95 pointer-events-none"
     )}
   >
     <nav className="flex items-center gap-6 text-sm font-semibold bg-black/40 backdrop-blur-xl px-8 py-3 rounded-full shadow-2xl shadow-black/50">
@@ -79,7 +84,7 @@ export default function Navbar() {
           root: null,
           threshold: 0,
           rootMargin: "-80% 0px 0px 0px",
-        },
+        }
       );
 
       observer.observe(heroSection);
@@ -104,8 +109,8 @@ export default function Navbar() {
       <header
         ref={headerRef}
         className={cn(
-          "sticky top-0 z-[100] w-full backdrop-blur supports-backdrop-filter:bg-background/75 shadow-sm transition-all duration-500 bg-background/85",
-          isOverHero && "xl:opacity-0 xl:pointer-events-none",
+          "fixed h-16 top-0 z-[100] w-full backdrop-blur supports-backdrop-filter:bg-background/75 shadow-sm transition-all duration-500 bg-background/85",
+          isOverHero && "xl:opacity-0 xl:pointer-events-none"
         )}
       >
         <div className="container mx-auto flex items-center gap-6 py-3 px-4">
@@ -143,7 +148,6 @@ export default function Navbar() {
             <GetQbloxButton className="text-sm font-semibold transition hover:underline border border-primary/50 rounded-md py-2 px-4 text-primary hover:text-primary/80" />
           </div> */}
           <div className="ml-auto flex items-center gap-4 ">
-
             <div className="ml-auto ">
               <GetQbloxButton className="text-sm font-semibold transition hover:underline border border-primary/50 rounded-md py-2 px-4 text-primary hover:text-primary/80" />
             </div>

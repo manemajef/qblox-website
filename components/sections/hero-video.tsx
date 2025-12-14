@@ -1,33 +1,27 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Button } from "../ui/button";
 import { ExternalLink, Volume2, VolumeX } from "lucide-react";
 import { YOUTUBE_URL, YOUTUBE_EMBED_URL } from "@/lib/constants";
+import { ContactUs } from "../blocks/form";
+import { cn } from "@/lib/utils";
 
-function Video({
-  videoRef,
-}: {
-  videoRef: React.RefObject<HTMLIFrameElement | null>;
-}) {
-  // Extract video ID for the loop playlist parameter
-  const videoId = YOUTUBE_EMBED_URL.split("/").pop()?.split("?")[0];
-  const separator = YOUTUBE_EMBED_URL.includes("?") ? "&" : "?";
-  // enablejsapi=1 is required to control the player via postMessage
-  // scale-[1.35] and pointer-events-none hide the YouTube UI
-  const embedSrc = `${YOUTUBE_EMBED_URL}${separator}autoplay=1&mute=1&controls=0&start=6&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=${videoId}&enablejsapi=1`;
-  // const embedSrc = `${YOUTUBE_EMBED_URL}${separator}autoplay=1&mute=1&controls=0&start=6&end=39&showinfo=0&rel=0&modestbranding=1&loop=1&playlist=${videoId}&enablejsapi=1`;
+function HeroOverlay() {
+  return <div className="absolute inset-0 bg-black/35" />;
+}
 
+function HeroContent() {
   return (
-    <div className="absolute inset-0 pointer-events-none">
-      <iframe
-        ref={videoRef}
-        className="h-full w-full"
-        src={embedSrc}
-        title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-      />
+    <div className="absolute inset-0 z-10 flex h-full items-center justify-center px-4 py-16">
+      <div className="flex flex-col items-center gap-6 text-center text-white">
+        <div className="flex flex-col items-center gap-3 sm:flex-row">
+          <Button asChild>
+            <a href="#intro">Explore Qblox</a>
+          </Button>
+          <ContactUs className=" border cursor-pointer border-white/60 bg-white/0 text-white hover:bg-white/10 hover:text-white" />
+        </div>
+      </div>
     </div>
   );
 }
@@ -78,28 +72,75 @@ function HeroControls({
 }
 
 export function HeroVideo() {
-  const [isMuted, setIsMuted] = useState(true);
+  const [muted, setMuted] = useState(true);
   const videoRef = useRef<HTMLIFrameElement>(null);
+  const [showVideo, setShowVideo] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setShowVideo(true);
+    }, 1000);
+  }, []);
+
+  // Extract video ID for the loop playlist parameter
+  const videoId = YOUTUBE_EMBED_URL.split("/").pop()?.split("?")[0];
+  const separator = YOUTUBE_EMBED_URL.includes("?") ? "&" : "?";
+
+  const playerParams = [
+    "autoplay=1",
+    "mute=1",
+    "controls=0",
+    "start=6",
+    "showinfo=0",
+    "rel=0",
+    "modestbranding=1",
+    "loop=1",
+    `playlist=${videoId}`,
+    "enablejsapi=1",
+    "iv_load_policy=3",
+  ];
+
+  const embedSrc = `${YOUTUBE_EMBED_URL}${separator}${playerParams.join("&")}`;
 
   const toggleMute = () => {
     if (videoRef.current?.contentWindow) {
-      const action = isMuted ? "unMute" : "mute";
+      const action = muted ? "unMute" : "mute";
       videoRef.current.contentWindow.postMessage(
         JSON.stringify({ event: "command", func: action, args: [] }),
         "*"
       );
-      setIsMuted(!isMuted);
+      setMuted(!muted);
     }
   };
 
   return (
-    <>
-      <Video videoRef={videoRef} />
-      {/* 
-        We place controls here so they share state. 
-        Positioning is handled by absolute classes within HeroControls 
-      */}
-      <HeroControls isMuted={isMuted} toggleMute={toggleMute} />
-    </>
+    <div className="mt-16  xl:mt-0 xl:z-50">
+      <section
+        id="hero-section"
+        className="relative isolate w-full aspect-video overflow-hidden"
+      >
+        <div className="absolute inset-0 pointer-events-none">
+          <iframe
+            ref={videoRef}
+            className="h-full w-full"
+            src={embedSrc}
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        </div>
+        <HeroOverlay />
+        {/* <div
+          className={cn(
+            "absolute inset-0 bg-black/35",
+            showVideo ? "bg-black/0" : "bg-white"
+          )}
+        /> */}
+        ;
+        <div className="hidden sm:block h-full">
+          <HeroContent />
+        </div>
+        <HeroControls isMuted={muted} toggleMute={toggleMute} />
+      </section>
+    </div>
   );
 }
