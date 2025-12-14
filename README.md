@@ -17,7 +17,7 @@
 - [ ] Make transitions work
 - [x] Animate
 - [x] Fix mute button
-- [ ] Contact us page + contact api
+- [x] Contact us page + contact api
 - [ ] Make additonal Pages:
   - [ ] About us
   - [ ] How Qblox is Made

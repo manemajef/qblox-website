@@ -38,10 +38,10 @@ export async function POST(req: Request) {
     `;
 
     const data = await resend.emails.send({
-      from: "Qblox Contact <no-reply@resend.dev>",
+      from: "Qblox <noreply@qblox.co.il>",
       to: RECIPIENTS,
       replyTo: from, // ⭐ important
-      subject: `[Contact] ${subject}`,
+      subject: `Message from Qblox website!`,
       html,
     });
 
