@@ -97,6 +97,7 @@ export function HeroVideo() {
     `playlist=${videoId}`,
     "enablejsapi=1",
     "iv_load_policy=3",
+    "playsinline=1",
   ];
 
   const embedSrc = `${YOUTUBE_EMBED_URL}${separator}${playerParams.join("&")}`;

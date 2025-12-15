@@ -48,6 +48,12 @@ export default function Example() {
         loop={true}
         playsInline={true}
         controls={false}
+        config={{
+          youtube: {
+            iv_load_policy: 3,
+            start: 6,
+          },
+        }}
       />
       <div className="absolute inset-0 flex items-center justify-center bg-black/30">
         <Button>Click Me</Button>
