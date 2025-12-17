@@ -92,7 +92,7 @@ export function HeroVideo() {
     "start=6",
     "showinfo=0",
     "rel=0",
-    "modestbranding=1",
+    "modestbranding=0",
     "loop=1",
     `playlist=${videoId}`,
     "enablejsapi=1",
