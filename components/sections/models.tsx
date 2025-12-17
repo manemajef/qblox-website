@@ -1,6 +1,6 @@
 import models from "@/content/sections/models.json";
 import Image from "next/image";
-import { H2, H3, Muted } from "../prose";
+import { H2, H3, H4, Muted } from "../prose";
 
 interface Model {
   id: string;
@@ -43,7 +43,7 @@ export default function Models() {
                 {/* <h3 className="mb-3 text-lg font-semibold md:mb-4 md:text-2xl lg:mb-6"> */}
                 {/*   {m.heading} */}
                 {/* </h3> */}
-                <H3>{m.heading}</H3>
+                <H4>{m.heading}</H4>
                 <Muted>{m.description}</Muted>
 
                 {/* <p className="text-muted-foreground lg:text-lg"> */}

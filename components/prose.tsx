@@ -125,7 +125,7 @@ export function Strong({ className = "", children }: PropsType) {
 }
 export function Muted({ className = "", children }: PropsType) {
   return (
-    <p className={cn("text-muted-foreground  sm:text-lg", className)}>
+    <p className={cn("text-muted-foreground  text-lg", className)}>
       {children}
     </p>
   );
