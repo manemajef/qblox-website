@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import { ExternalLink, Volume2, VolumeX } from "lucide-react";
 import { YOUTUBE_URL, YOUTUBE_EMBED_URL } from "@/lib/constants";
 
