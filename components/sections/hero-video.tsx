@@ -6,7 +6,7 @@ import { ExternalLink, Volume2, VolumeX } from "lucide-react";
 import { YOUTUBE_URL, YOUTUBE_EMBED_URL } from "@/lib/constants";
 import { ContactUs } from "../blocks/form";
 import { cn } from "@/lib/utils";
-
+import Image from "next/image";
 function HeroOverlay() {
   return <div className="absolute inset-0 bg-black/35" />;
 }
@@ -70,16 +70,31 @@ function HeroControls({
     </div>
   );
 }
-
+function Thumbnail() {
+  const [isDone, setIsDone] = useState(false);
+  useEffect(() => {
+    setTimeout(() => setIsDone(true), 500);
+  }, []);
+  return (
+    <div
+      className={cn(
+        "abosolute inset-0 aspect-video transition-opacity duration-500",
+        isDone && "opacity-0"
+      )}
+    >
+      <Image src="/thumbnail.jpg" fill alt="aspect" className="object-cover" />
+    </div>
+  );
+}
 export function HeroVideo() {
   const [muted, setMuted] = useState(true);
   const videoRef = useRef<HTMLIFrameElement>(null);
-  const [showVideo, setShowVideo] = useState(false);
-  useEffect(() => {
-    setTimeout(() => {
-      setShowVideo(true);
-    }, 1000);
-  }, []);
+  // const [showVideo, setShowVideo] = useState(false);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     setShowVideo(true);
+  //   }, 1000);
+  // }, []);
 
   // Extract video ID for the loop playlist parameter
   const videoId = YOUTUBE_EMBED_URL.split("/").pop()?.split("?")[0];
@@ -129,6 +144,7 @@ export function HeroVideo() {
             allowFullScreen
           />
         </div>
+        <Thumbnail />
         <HeroOverlay />
         {/* <div
           className={cn(
