@@ -12,7 +12,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Menu } from "lucide-react";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { AMAZON_PRODUCT_URL } from "@/lib/constants";
 
