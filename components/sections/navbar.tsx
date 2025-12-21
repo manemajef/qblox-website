@@ -22,6 +22,11 @@ const links = [
   { label: "Pricing", href: "#pricing" },
 ];
 
+type LinkType = {
+  label: string;
+  href: string;
+};
+
 const GetQbloxButton = ({ className }: { className?: string }) => (
   <Link
     href={AMAZON_PRODUCT_URL}
@@ -32,7 +37,28 @@ const GetQbloxButton = ({ className }: { className?: string }) => (
     Get Qblox
   </Link>
 );
-
+const MobileDropdown = ({ links }: { links: LinkType[] }) => (
+  <DropdownMenu>
+    <DropdownMenuTrigger asChild>
+      <Button variant="outline" size="icon">
+        <Menu className="h-5 w-5" />
+      </Button>
+    </DropdownMenuTrigger>
+    <DropdownMenuContent className="min-w-[200px] z-[101]">
+      <DropdownMenuLabel className="font-semibold">Menu</DropdownMenuLabel>
+      <DropdownMenuSeparator />
+      {links.map((link) => (
+        <DropdownMenuItem key={link.href} asChild>
+          <Link href={link.href}>{link.label}</Link>
+        </DropdownMenuItem>
+      ))}
+      <DropdownMenuSeparator />
+      <DropdownMenuItem asChild>
+        <GetQbloxButton className="text-sm font-semibold transition hover:underline border rounded-md py-2 px-4 text-primary hover:text-primary/80" />
+      </DropdownMenuItem>
+    </DropdownMenuContent>
+  </DropdownMenu>
+);
 export default function Navbar() {
   const { isOverHero } = useNavbar();
 
@@ -129,28 +155,7 @@ export default function Navbar() {
 
           {/* Mobile Menu */}
           <div className="ml-auto md:hidden">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="icon">
-                  <Menu className="h-5 w-5" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="min-w-[200px] z-[101]">
-                <DropdownMenuLabel className="font-semibold">
-                  Menu
-                </DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                {links.map((link) => (
-                  <DropdownMenuItem key={link.href} asChild>
-                    <Link href={link.href}>{link.label}</Link>
-                  </DropdownMenuItem>
-                ))}
-                <DropdownMenuSeparator />
-                <DropdownMenuItem asChild>
-                  <GetQbloxButton className="text-sm font-semibold transition hover:underline border rounded-md py-2 px-4 text-primary hover:text-primary/80" />
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <MobileDropdown links={links} />
           </div>
         </div>
       </div>
