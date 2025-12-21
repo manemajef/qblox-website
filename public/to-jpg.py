@@ -2,8 +2,8 @@ import os
 
 from PIL import Image
 
-INPUT_DIR = "lifestyle"
-OUTPUT_DIR = "lifestyle_jpegs"
+INPUT_DIR = "video"
+OUTPUT_DIR = "video-jpeg"
 QUALITY = 85  # good balance for websites (60-90 range)
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
