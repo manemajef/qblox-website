@@ -65,10 +65,11 @@ export default function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 w-full z-[100] transition-all duration-500",
+        "fixed top-0 left-1/2 -translate-x-1/2 w-full z-[100] transition-all duration-500",
         // When over hero on desktop: float in center
         // xl:left-1/2 xl:-translate-x-1/2 xl:w-auto
-        isOverHero && "xl:top-6 xl:flex xl:justify-center"
+        // isOverHero && "xl:top-6 xl:flex xl:justify-center",
+        isOverHero && "xl:top-6   xl:w-auto "
       )}
     >
       <div
