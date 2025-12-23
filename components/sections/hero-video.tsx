@@ -34,7 +34,7 @@ function HeroControls({
   toggleMute: () => void;
 }) {
   return (
-    <div className="absolute inset-x-0 top-0 xl:top-5 z-20 flex justify-end p-4">
+    <div className="absolute inset-x-0 top-0 xl:top-5 z-105 flex justify-end p-4">
       <div className="w-full max-w-7xl mx-auto flex justify-end">
         <div className="flex items-center gap-2 rounded-full bg-black/40 px-2 py-1 backdrop-blur">
           <Button
@@ -78,8 +78,8 @@ function Thumbnail() {
   return (
     <div
       className={cn(
-        "abosolute inset-0 aspect-video transition-opacity duration-500",
-        isDone && "opacity-0"
+        "absolute inset-0 aspect-video transition-opacity duration-500",
+        isDone && "opacity-0 hidden"
       )}
     >
       <Image src="/thumbnail.jpg" fill alt="aspect" className="object-cover" />
@@ -152,7 +152,6 @@ export function HeroVideo() {
             showVideo ? "bg-black/0" : "bg-white"
           )}
         /> */}
-        ;
         <div className="hidden sm:block h-full">
           <HeroContent />
         </div>

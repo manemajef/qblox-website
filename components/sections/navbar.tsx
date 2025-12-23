@@ -22,6 +22,11 @@ const links = [
   { label: "Pricing", href: "#pricing" },
 ];
 
+type LinkType = {
+  label: string;
+  href: string;
+};
+
 const GetQbloxButton = ({ className }: { className?: string }) => (
   <Link
     href={AMAZON_PRODUCT_URL}
@@ -32,17 +37,39 @@ const GetQbloxButton = ({ className }: { className?: string }) => (
     Get Qblox
   </Link>
 );
-
+const MobileDropdown = ({ links }: { links: LinkType[] }) => (
+  <DropdownMenu>
+    <DropdownMenuTrigger asChild>
+      <Button variant="outline" size="icon">
+        <Menu className="h-5 w-5" />
+      </Button>
+    </DropdownMenuTrigger>
+    <DropdownMenuContent className="min-w-[200px] z-[101]">
+      <DropdownMenuLabel className="font-semibold">Menu</DropdownMenuLabel>
+      <DropdownMenuSeparator />
+      {links.map((link) => (
+        <DropdownMenuItem key={link.href} asChild>
+          <Link href={link.href}>{link.label}</Link>
+        </DropdownMenuItem>
+      ))}
+      <DropdownMenuSeparator />
+      <DropdownMenuItem asChild>
+        <GetQbloxButton className="text-sm font-semibold transition hover:underline border rounded-md py-2 px-4 text-primary hover:text-primary/80" />
+      </DropdownMenuItem>
+    </DropdownMenuContent>
+  </DropdownMenu>
+);
 export default function Navbar() {
   const { isOverHero } = useNavbar();
 
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 w-full z-[100] transition-all duration-500",
+        "fixed top-0 left-1/2 -translate-x-1/2 w-full z-[100] transition-all duration-500",
         // When over hero on desktop: float in center
         // xl:left-1/2 xl:-translate-x-1/2 xl:w-auto
-        isOverHero && "xl:top-6 xl:flex xl:justify-center"
+        // isOverHero && "xl:top-6 xl:flex xl:justify-center",
+        isOverHero && "xl:top-6   xl:w-auto "
       )}
     >
       <div
@@ -129,28 +156,7 @@ export default function Navbar() {
 
           {/* Mobile Menu */}
           <div className="ml-auto md:hidden">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="icon">
-                  <Menu className="h-5 w-5" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="min-w-[200px] z-[101]">
-                <DropdownMenuLabel className="font-semibold">
-                  Menu
-                </DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                {links.map((link) => (
-                  <DropdownMenuItem key={link.href} asChild>
-                    <Link href={link.href}>{link.label}</Link>
-                  </DropdownMenuItem>
-                ))}
-                <DropdownMenuSeparator />
-                <DropdownMenuItem asChild>
-                  <GetQbloxButton className="text-sm font-semibold transition hover:underline border rounded-md py-2 px-4 text-primary hover:text-primary/80" />
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <MobileDropdown links={links} />
           </div>
         </div>
       </div>
