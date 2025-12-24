@@ -8,3 +8,7 @@ export const YOUTUBE_REPAIR_SHORT =
   "https://youtube.com/shorts/O5sjpPgf4Yg?feature=share";
 
 export const youtube_url = "https://www.youtube.com/embed/t_Us_D8lJIU";
+export const lg_url =
+  "https://www.amazon.com/QBLOX-Construction-Multi-Directional-Educational-Structures/dp/B0FLZ79GD4/ref=sr_1_2?crid=2C8HG2DDUXLTK&dib=eyJ2IjoiMSJ9.utt9lx44OGUJD1qA-xnY63I4ybCMQ8UD1IBs7wkzpM8.R-XyQs7VKFo8aNbdkNWjZxGHTFk8zpRdPxM8AFPXZco&dib_tag=se&keywords=qblox&qid=1765110496&sprefix=qblo%2Caps%2C244&sr=8-2&th=1";
+export const sm_url =
+  "https://www.amazon.com/QBLOX-Construction-Multi-Directional-Educational-Structures/dp/B0FLZP2SV6/ref=sr_1_2?crid=2C8HG2DDUXLTK&dib=eyJ2IjoiMSJ9.utt9lx44OGUJD1qA-xnY63I4ybCMQ8UD1IBs7wkzpM8.R-XyQs7VKFo8aNbdkNWjZxGHTFk8zpRdPxM8AFPXZco&dib_tag=se&keywords=qblox&qid=1765110496&sprefix=qblo%2Caps%2C244&sr=8-2&th=1";
