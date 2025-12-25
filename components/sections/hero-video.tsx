@@ -7,6 +7,7 @@ import { YOUTUBE_URL, YOUTUBE_EMBED_URL } from "@/lib/constants";
 import { ContactUs } from "../blocks/form";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { YoutubeLoader } from "./youtube-loader";
 function HeroOverlay() {
   return <div className="absolute inset-0 bg-black/35" />;
 }
@@ -87,26 +88,6 @@ function Thumbnail() {
   );
 }
 
-function YoutubeCover() {
-  const [done, setDone] = useState(false);
-  useEffect(() => {
-    setTimeout(() => {
-      setDone(true);
-    }, 4000);
-  });
-  return (
-    <div
-      className={cn(
-        "absolute inset-1 z-110 flex bg-white rounded-2xl h-15",
-        done && "hidden"
-      )}
-    >
-      <div className="flex justify-center items-center">
-        <Button>press</Button>
-      </div>
-    </div>
-  );
-}
 export function HeroVideo() {
   const [muted, setMuted] = useState(true);
   const videoRef = useRef<HTMLIFrameElement>(null);
@@ -166,6 +147,7 @@ export function HeroVideo() {
           />
         </div>
         <Thumbnail />
+        <YoutubeLoader />
         <HeroOverlay />
         {/* <div
           className={cn(

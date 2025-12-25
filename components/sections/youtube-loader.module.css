@@ -1,0 +1,86 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.fadeIn {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.spin {
+  animation: spinSlow 8s linear infinite;
+}
+
+.delay0 {
+  animation-delay: 0ms;
+}
+
+.delay600 {
+  animation-delay: 600ms;
+}
+
+.delay900 {
+  animation-delay: 900ms;
+}
+
+.delay1200 {
+  animation-delay: 1200ms;
+}
+
+.delay1500 {
+  animation-delay: 1500ms;
+}
+
+.container {
+  position: absolute;
+  inset: 0;
+  z-index: 110;
+  background: linear-gradient(to bottom right, rgb(15 23 42), rgb(30 41 59), rgb(15 23 42));
+  transition: opacity 700ms;
+}
+
+.container.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.gradientOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top right, rgb(59 130 246 / 0.1), rgb(168 85 247 / 0.1), rgb(236 72 153 / 0.1));
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.gridPattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
