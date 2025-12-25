@@ -73,7 +73,7 @@ function HeroControls({
 function Thumbnail() {
   const [isDone, setIsDone] = useState(false);
   useEffect(() => {
-    setTimeout(() => setIsDone(true), 500);
+    setTimeout(() => setIsDone(true), 700);
   }, []);
   return (
     <div
