@@ -86,6 +86,27 @@ function Thumbnail() {
     </div>
   );
 }
+
+function YoutubeCover() {
+  const [done, setDone] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setDone(true);
+    }, 4000);
+  });
+  return (
+    <div
+      className={cn(
+        "absolute inset-1 z-110 flex bg-white rounded-2xl h-15",
+        done && "hidden"
+      )}
+    >
+      <div className="flex justify-center items-center">
+        <Button>press</Button>
+      </div>
+    </div>
+  );
+}
 export function HeroVideo() {
   const [muted, setMuted] = useState(true);
   const videoRef = useRef<HTMLIFrameElement>(null);
