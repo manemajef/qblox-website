@@ -8,6 +8,7 @@ import {
   useRef,
   ReactNode,
 } from "react";
+import { usePathname } from "next/navigation";
 
 type NavbarContextType = {
   isOverHero: boolean;
@@ -16,7 +17,8 @@ type NavbarContextType = {
 const NavbarContext = createContext<NavbarContextType>({ isOverHero: true });
 
 export function NavbarProvider({ children }: { children: ReactNode }) {
-  const [isOverHero, setIsOverHero] = useState(true);
+  const pathname = usePathname();
+  const [isOverHero, setIsOverHero] = useState(pathname === "/");
   const sentinelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -25,7 +27,7 @@ export function NavbarProvider({ children }: { children: ReactNode }) {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsOverHero(entry.isIntersecting);
+        setIsOverHero(pathname === "/" && entry.isIntersecting);
       },
       {
         root: null,
@@ -36,7 +38,7 @@ export function NavbarProvider({ children }: { children: ReactNode }) {
     observer.observe(sentinelEl);
 
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
 
   return (
     <NavbarContext.Provider value={{ isOverHero }}>

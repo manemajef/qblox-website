@@ -21,6 +21,16 @@ def to_jpg(dir, filename, ext = "png"):
 dir = "public" 
 filename = "thumbnail"
 
+def colorwheel():
+    work_dir = os.path.join("public", "colorwheel")
+    if not os.path.exists(work_dir):
+        print(f"Directory not found: {work_dir}")
+        return
+    for f in os.listdir(work_dir):
+        if f.startswith("."):
+            continue
+        to_jpg(work_dir, f)
+
 if __name__ == "__main__":
-    to_jpg(dir, filename)
+    colorwheel()
     
