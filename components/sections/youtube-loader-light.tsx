@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { AnimatedIn } from "../ui/animated-in";
-import "./youtube-loader.css";
+// import "./youtube-loader.css";
 
 export function YoutubeLoaderLight() {
   const [done, setDone] = useState(false);
@@ -32,13 +32,13 @@ export function YoutubeLoaderLight() {
       <div className="absolute inset-0 flex items-center justify-center p-6">
         <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-8 md:gap-12 items-center">
           {/* Text content */}
-          <div className="text-center md:text-left space-y-4 md:space-y-6">
+          <div className="text-center md:text-start space-y-4 md:space-y-6 ">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-primary leading-tight">
               <AnimatedIn delay={0} splitChars charDelay={40}>
                 Introducing Qblox
               </AnimatedIn>
             </h1>
-            <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-muted-foreground max-w-xl mx-auto leading-relaxed">
+            <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-muted-foreground max-w-xl mx-auto md:mx-0 leading-relaxed">
               <AnimatedIn delay={800} splitChars charDelay={20}>
                 the groundbreaking building blocks which redefines 3D thinking
                 and creativity.
