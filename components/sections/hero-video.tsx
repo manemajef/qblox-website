@@ -80,7 +80,7 @@ function Thumbnail() {
   return (
     <div
       className={cn(
-        "absolute inset-0 aspect-video transition-opacity duration-500",
+        "hidden absolute inset-0 aspect-video transition-opacity duration-500",
         isDone && "opacity-0 hidden",
       )}
     >
@@ -92,7 +92,7 @@ function Thumbnail() {
 export function HeroVideo() {
   const [muted, setMuted] = useState(true);
   const videoRef = useRef<HTMLIFrameElement>(null);
-  const useLoader = false;
+  const useLoader = true;
 
   // Extract video ID from the constant
   const videoId = YOUTUBE_EMBED_URL.split("/").pop()?.split("?")[0];
