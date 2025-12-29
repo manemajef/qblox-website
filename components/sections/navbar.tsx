@@ -17,7 +17,7 @@ import { useNavbar } from "../providers/navbar-provider";
 
 const links = [
   { label: "Getting Started", href: "/v2" },
-  { label: "Start Building", href: "#models" },
+  { label: "Start Building", href: "/guides/colorwheel" },
   { label: "Q&A", href: "#faq" },
   { label: "Pricing", href: "#pricing" },
 ];

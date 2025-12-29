@@ -7,6 +7,8 @@ import { YOUTUBE_URL, YOUTUBE_EMBED_URL } from "@/lib/constants";
 import { ContactUs } from "../blocks/form";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { YoutubeLoader } from "./youtube-loader";
+import { YoutubeLoaderLight } from "./youtube-loader-light";
 function HeroOverlay() {
   return <div className="absolute inset-0 bg-black/35" />;
 }
@@ -86,25 +88,22 @@ function Thumbnail() {
     </div>
   );
 }
+
 export function HeroVideo() {
   const [muted, setMuted] = useState(true);
   const videoRef = useRef<HTMLIFrameElement>(null);
-  // const [showVideo, setShowVideo] = useState(false);
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setShowVideo(true);
-  //   }, 1000);
-  // }, []);
+  const useLoader = false;
 
-  // Extract video ID for the loop playlist parameter
+  // Extract video ID from the constant
   const videoId = YOUTUBE_EMBED_URL.split("/").pop()?.split("?")[0];
-  const separator = YOUTUBE_EMBED_URL.includes("?") ? "&" : "?";
 
+  // Build URL from scratch to avoid duplicate parameters
   const playerParams = [
     "autoplay=1",
     "mute=1",
     "controls=0",
-    "start=6",
+    `start=${useLoader ? "5" : "6"}`,
+    "end=53",
     "showinfo=0",
     "rel=0",
     "modestbranding=0",
@@ -115,7 +114,12 @@ export function HeroVideo() {
     "playsinline=1",
   ];
 
-  const embedSrc = `${YOUTUBE_EMBED_URL}${separator}${playerParams.join("&")}`;
+  const embedSrc = `https://www.youtube.com/embed/${videoId}?${playerParams.join(
+    "&"
+  )}`;
+
+  console.log("Embed URL:", embedSrc);
+  console.log("Start time:", useLoader ? "3" : "6");
 
   const toggleMute = () => {
     if (videoRef.current?.contentWindow) {
@@ -136,6 +140,7 @@ export function HeroVideo() {
       >
         <div className="absolute inset-0 pointer-events-none">
           <iframe
+            key={embedSrc}
             ref={videoRef}
             className="h-full w-full"
             src={embedSrc}
@@ -145,6 +150,7 @@ export function HeroVideo() {
           />
         </div>
         <Thumbnail />
+        {useLoader && <YoutubeLoaderLight />}
         <HeroOverlay />
         {/* <div
           className={cn(
