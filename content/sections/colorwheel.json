@@ -1,6 +1,6 @@
 {
     "title": "The (Triangular) Color Wheel – Building instructions",
-    "description": ["Begin by taking a glance at the six figures below, 3d sketches that show 6 major building steps. Look at the last one which shows the final destination – the completed wheel. Notice that it composed of sub-units, symmetrc sub-units of identical shape but different colors. ",
+    "description": ["Begin by taking a glance at the six figures below, 3d sketches that show 6 major building steps. Look at the last one which shows the final destination – the completed wheel. Notice that it is composed of sub-units, symmetrc sub-units of identical shape but different colors. ",
     "Each sub has one central cube of a neutral hue (greyscale), surrounded by three cubes of a single color. At each position, the peripheral cube assume one color of the rainbow.  Color wheels are traditionally presented with red at the top."],
     "stages": [
         {

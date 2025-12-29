@@ -1,6 +1,8 @@
 import models from "@/content/sections/models.json";
 import Image from "next/image";
 import { H2, H3, H4, Muted } from "../prose";
+import { Button } from "../ui/button";
+import { ArrowRight } from "lucide-react";
 
 interface Model {
   id: string;
@@ -52,6 +54,38 @@ export default function Models() {
               </div>
             </div>
           ))}
+        </div>
+        <div className="flex justify-start">
+          <Button size="lg" asChild className="group mt-6">
+            <a href="/guides/colorwheel" className="text-xl p-4">
+              Go to Detailed Guide
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </a>
+          </Button>
+        </div>
+        <div className="bg-white border max-w-3xl mx-auto rounded-3xl shadow-xl shadow-black/5 mt-16 p-8 lg:p-12 hidden">
+          <div className="text-center space-y-6">
+            <H3>Endless Possibilities</H3>
+
+            <div className="space-y-4 max-w-2xl mx-auto">
+              <Muted className="text-lg">
+                While we wish to provide you with as much guidance as possible,
+                since there are endless possibilities, one cannot provide a
+                guide for everything.
+              </Muted>
+              <Muted>
+                That being said, we did provide a detailed guide for the
+                colorwheel.
+              </Muted>
+            </div>
+
+            <Button size="lg" asChild className="group mt-6">
+              <a href="/guides/colorwheel">
+                Go to Detailed Guide
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
+            </Button>
+          </div>
         </div>
       </div>
     </section>

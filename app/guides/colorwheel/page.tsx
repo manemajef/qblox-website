@@ -10,15 +10,15 @@ export default function Page() {
   return (
     <div className="mt-12 p-4 container mx-auto">
       <H1 className="text-center mb-12 mt-8">Guide for ColorWheel</H1>
-      <div className=" mx-auto md:text-xl lg:flex justify-center gap-16 text-muted-foreground mb-12">
-        <div>
+      <div className=" mx-auto text-lg md:text-xl lg:flex justify-center gap-16 text-muted-foreground mb-12">
+        <div className="flex flex-col justify-center">
           {colorwheel.description.map((d, i) => (
-            <p key={i} className="p-4">
+            <p key={i} className="p-4 lg:max-w-2xl">
               {d}
             </p>
           ))}
         </div>
-        <div className="aspect-square w-full hidden lg:block relative">
+        <div className="aspect-square max-w-md w-full hidden lg:block relative">
           <Image
             src="/product/large-set.jpg"
             fill
