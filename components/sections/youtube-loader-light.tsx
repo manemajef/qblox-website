@@ -10,7 +10,7 @@ export function YoutubeLoaderLight() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setDone(true);
-    }, 3000);
+    }, 2000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -27,27 +27,36 @@ export function YoutubeLoaderLight() {
           animation: "pulseGradient 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         }}
       />
+      <div className="absolute bottom-8 left-0 right-0 flex justify-center items-center p-4">
+        <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-muted-foreground max-w-3xl mx-auto md:mx-0 leading-relaxed">
+          <AnimatedIn delay={800} splitChars charDelay={20}>
+            the groundbreaking building blocks which redefines 3D thinking and
+            creativity.
+          </AnimatedIn>
+        </h2>
+      </div>
 
       {/* Center content */}
       <div className="absolute inset-0 flex items-center justify-center p-6">
-        <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-8 md:gap-12 items-center">
+        <div className="w-full max-w-3xl  mx-auto grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-8 md:gap-12 items-center -translate-y-10">
           {/* Text content */}
           <div className="text-center md:text-start space-y-4 md:space-y-6 ">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-primary leading-tight">
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-8xl font-bold text-primary leading-tight">
               <AnimatedIn delay={0} splitChars charDelay={40}>
                 Introducing Qblox
               </AnimatedIn>
             </h1>
-            <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-muted-foreground max-w-xl mx-auto md:mx-0 leading-relaxed">
-              <AnimatedIn delay={800} splitChars charDelay={20}>
-                the groundbreaking building blocks which redefines 3D thinking
-                and creativity.
-              </AnimatedIn>
-            </h2>
+
+            {/* <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-muted-foreground max-w-xl mx-auto md:mx-0 leading-relaxed"> */}
+            {/*   <AnimatedIn delay={800} splitChars charDelay={20}> */}
+            {/*     the groundbreaking building blocks which redefines 3D thinking */}
+            {/*     and creativity. */}
+            {/*   </AnimatedIn> */}
+            {/* </h2> */}
           </div>
 
           {/* Spinning cube */}
-          <div className="flex justify-center md:justify-end items-center">
+          <div className="flex justify-center md:justify-start md:pt-8 lg:pt-12 lg:justify-center items-center">
             <div
               className="opacity-0"
               style={{

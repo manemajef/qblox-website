@@ -102,7 +102,7 @@ export function HeroVideo() {
     "autoplay=1",
     "mute=1",
     "controls=0",
-    `start=${useLoader ? "4" : "6"}`,
+    `start=${useLoader ? "5" : "6"}`,
     "end=53",
     "showinfo=0",
     "rel=0",
