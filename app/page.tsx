@@ -15,7 +15,6 @@ export default function Home() {
         <div id="intro">
           <Intro />
         </div>
-
         <div id="guide">
           <Models />
           <Repair />

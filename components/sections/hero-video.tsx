@@ -81,7 +81,7 @@ function Thumbnail() {
     <div
       className={cn(
         "absolute inset-0 aspect-video transition-opacity duration-500",
-        isDone && "opacity-0 hidden"
+        isDone && "opacity-0 hidden",
       )}
     >
       <Image src="/thumbnail.jpg" fill alt="aspect" className="object-cover" />
@@ -115,7 +115,7 @@ export function HeroVideo() {
   ];
 
   const embedSrc = `https://www.youtube.com/embed/${videoId}?${playerParams.join(
-    "&"
+    "&",
   )}`;
 
   console.log("Embed URL:", embedSrc);
@@ -126,7 +126,7 @@ export function HeroVideo() {
       const action = muted ? "unMute" : "mute";
       videoRef.current.contentWindow.postMessage(
         JSON.stringify({ event: "command", func: action, args: [] }),
-        "*"
+        "*",
       );
       setMuted(!muted);
     }

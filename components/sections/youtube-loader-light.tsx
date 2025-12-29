@@ -29,7 +29,7 @@ export function YoutubeLoaderLight() {
       />
       <div className="absolute bottom-8 left-0 right-0 flex justify-center items-center p-4">
         <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-muted-foreground max-w-3xl mx-auto md:mx-0 leading-relaxed">
-          <AnimatedIn delay={800} splitChars charDelay={20}>
+          <AnimatedIn delay={400} splitChars charDelay={15}>
             the groundbreaking building blocks which redefines 3D thinking and
             creativity.
           </AnimatedIn>
