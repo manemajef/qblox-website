@@ -10,7 +10,7 @@ export function YoutubeLoaderLight() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setDone(true);
-    }, 2000);
+    }, 2500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -20,7 +20,6 @@ export function YoutubeLoaderLight() {
         done ? "opacity-0 pointer-events-none" : ""
       }`}
     >
-      {/* Subtle animated gradient overlay */}
       <div
         className="absolute inset-0 bg-gradient-to-tr from-blue-500/5 via-purple-500/5 to-pink-500/5"
         style={{
@@ -29,10 +28,10 @@ export function YoutubeLoaderLight() {
       />
       <div className="absolute bottom-8 left-0 right-0 flex justify-center items-center p-4">
         <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-muted-foreground max-w-3xl mx-auto md:mx-0 leading-relaxed">
-          <AnimatedIn delay={400} splitChars charDelay={15}>
+          {/*<AnimatedIn delay={400} splitChars charDelay={15}>
             the groundbreaking building blocks which redefines 3D thinking and
             creativity.
-          </AnimatedIn>
+          </AnimatedIn>*/}
         </h2>
       </div>
 
@@ -46,13 +45,12 @@ export function YoutubeLoaderLight() {
                 Introducing Qblox
               </AnimatedIn>
             </h1>
-
-            {/* <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-muted-foreground max-w-xl mx-auto md:mx-0 leading-relaxed"> */}
-            {/*   <AnimatedIn delay={800} splitChars charDelay={20}> */}
-            {/*     the groundbreaking building blocks which redefines 3D thinking */}
-            {/*     and creativity. */}
-            {/*   </AnimatedIn> */}
-            {/* </h2> */}
+            <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-muted-foreground max-w-3xl mx-auto md:mx-0 leading-relaxed">
+              <AnimatedIn delay={400} splitChars charDelay={15}>
+                the groundbreaking building blocks which redefines 3D thinking and
+                creativity.
+              </AnimatedIn>
+            </h2>
           </div>
 
           {/* Spinning cube */}
@@ -61,7 +59,7 @@ export function YoutubeLoaderLight() {
               className="opacity-0"
               style={{
                 animation: "fadeInUp 1.2s ease-out forwards",
-                animationDelay: "600ms",
+                animationDelay: "800ms",
               }}
             >
               <div style={{ animation: "spinSlow 8s linear infinite" }}>

@@ -21,7 +21,7 @@
 - [ ] Make additonal Pages:
   - [ ] About us
   - [ ] How Qblox is Made
-  - [ ] Tutorials
+  - [x] Tutorials
 
 ## Where colorfull Cubes meets 3-Dimentional Art
 

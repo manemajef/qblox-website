@@ -150,7 +150,7 @@ export function HeroVideo() {
           />
         </div>
         <Thumbnail />
-        {useLoader && <YoutubeLoaderLight />}
+        {useLoader && <YoutubeLoader />}
         <HeroOverlay />
         {/* <div
           className={cn(
