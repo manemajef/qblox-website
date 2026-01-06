@@ -92,7 +92,7 @@ function Thumbnail() {
 export function HeroVideo() {
   const [muted, setMuted] = useState(true);
   const videoRef = useRef<HTMLIFrameElement>(null);
-  const useLoader = true;
+  const useLoader = false;
 
   // Extract video ID from the constant
   const videoId = YOUTUBE_EMBED_URL.split("/").pop()?.split("?")[0];

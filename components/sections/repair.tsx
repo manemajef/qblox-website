@@ -8,7 +8,8 @@ import Image from "next/image";
 const Img = () => (
   <div className="relative aspect-square w-full max-w-xs sm:max-w-sm rounded-2xl overflow-hidden ">
     <Image
-      src="/repair.jpg"
+      // src="/repair.jpg"
+      src="/detach.jpg"
       fill
       className="object-cover object-top"
       alt="Qblox cube repair demonstration"
@@ -28,8 +29,8 @@ export default function Repair() {
                 <H3>Qubes May Seperate, But They Dont Break</H3>
 
                 <Muted className="leading-relaxed">
-                  The cubes are designed to detach safely under impact rather
-                  than cracking, and they can be reassembled in seconds.
+                  The cubes are designed to detach safely under impact rather than
+                  cracking, and they can be reassembled in seconds.
                 </Muted>
               </div>
 

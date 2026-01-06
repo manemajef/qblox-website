@@ -1,7 +1,9 @@
-from PIL import Image
 import os
 
-def to_jpg(dir, filename, ext = "png"):
+from PIL import Image
+
+
+def to_jpg(dir, filename, ext="png"):
     if len(filename.split(".")) > 1:
         input_path = os.path.join(dir, filename)
         output_path = os.path.join(dir, os.path.splitext(filename)[0] + ".jpg")
@@ -14,12 +16,14 @@ def to_jpg(dir, filename, ext = "png"):
         background = Image.new("RGB", img.size, (255, 255, 255))
         background.paste(img, mask=img.split()[3])  # apply transparency mask
         background.save(
-            output_path, "JPEG", quality = 85 , optimize = True, progressive = True
+            output_path, "JPEG", quality=85, optimize=True, progressive=True
         )
         print(f"converted: {filename}")
 
-dir = "public" 
+
+dir = "public"
 filename = "thumbnail"
+
 
 def colorwheel():
     work_dir = os.path.join("public", "colorwheel")
@@ -31,6 +35,12 @@ def colorwheel():
             continue
         to_jpg(work_dir, f)
 
+
+def detach():
+    workdir = "public"
+    filename = "detach.jpg"
+    to_jpg(dir=workdir, filename=filename)
+
+
 if __name__ == "__main__":
-    colorwheel()
-    
+    detach()
